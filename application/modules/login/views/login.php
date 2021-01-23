@@ -10,7 +10,7 @@
     <meta name="author" content="">
 	
     <title>JBB</title>
-	<link rel="icon" type="image/png" href="<?php echo base_url("images/favicon.ico"); ?>" />
+	<link rel="icon" type="image/png" href="<?php echo base_url("images/favicon.png"); ?>" />
 
     <!-- Bootstrap Core CSS -->
 	<link href="<?php echo base_url("assets/bootstrap/vendor/bootstrap/css/bootstrap.min.css"); ?>" rel="stylesheet">
@@ -47,7 +47,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Autenticación</h3>
+                        <h3 class="panel-title">Log In</h3>
                     </div>
                     <div class="panel-body">
 						<?php if(isset($msj)){?>
@@ -66,7 +66,7 @@
 									<input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Contraseña" value="<?php echo get_cookie('password'); ?>" >
                                 </div>
 
-								<button type="submit" class="btn btn-lg btn-success btn-block" id='btnSubmit' name='btnSubmit'>Ingresar </button>
+								<button type="submit" class="btn btn-lg btn-success btn-block" id='btnSubmit' name='btnSubmit'>Log In </button>
                             </fieldset>
                         </form>
 						
