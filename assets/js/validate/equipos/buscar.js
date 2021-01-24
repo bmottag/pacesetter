@@ -10,7 +10,7 @@ $( document ).ready( function () {
 		}else{
 			return true;
 		}
-	}, "Debe indicar al menos un campo.");
+	}, "You must indicate at least one field.");
 
 	$( "#formBuscar" ).validate( {
 		rules: {

@@ -23,7 +23,7 @@
 				<div class="form-group text-left">
 					<label class="control-label" for="id_operador">Operador: *</label>
 					<select name="id_operador" id="id_operador" class="form-control" required>
-						<option value=''>Seleccione...</option>
+						<option value=''>Select ...</option>
 						<?php for ($i = 0; $i < count($listaOperadores); $i++) { ?>
 							<option value="<?php echo $listaOperadores[$i]["id_user"]; ?>" <?php if($information && $information[0]["fk_id_operador_combustible"] == $listaOperadores[$i]["id_user"]) { echo "selected"; }  ?>><?php echo $listaOperadores[$i]["first_name"] . ' ' . $listaOperadores[$i]["last_name"]; ?></option>		
 						<?php } ?>
@@ -37,7 +37,7 @@
 				<div class="form-group text-left">
 					<label class="control-label" for="tipo_consumo">Tipo de Consumo: *</label>
 					<select name="tipo_consumo" id="tipo_consumo" class="form-control" required>
-						<option value=''>Seleccione...</option>
+						<option value=''>Select ...</option>
 						<option value=1 <?php if($information && $information[0]["tipo_consumo"] == 1) { echo "selected"; }  ?>>Combustible</option>
 						<option value=2 <?php if($information && $information[0]["tipo_consumo"] == 2) { echo "selected"; }  ?>>Grasa</option>
 						<option value=3 <?php if($information && $information[0]["tipo_consumo"] == 3) { echo "selected"; }  ?>>Aceite Transmisión</option>

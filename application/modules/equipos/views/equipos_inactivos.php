@@ -41,7 +41,7 @@ if ($retornoError) {
 <?php 										
 	if(!$info){ 
 		echo '<div class="col-lg-12">
-				<p class="text-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> No hay registros en el sistema.</p>
+				<p class="text-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> There are no records in the system.</p>
 			</div>';
 	}else{
 ?>

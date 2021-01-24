@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/js/validate/equipos/buscar.js"); ?>"></script>
 
@@ -43,7 +44,7 @@ $(function(){
 							<div class="col-sm-12">
 								<label for="numero_serial">Equipment Type:</label>
 								<select name="id_tipo_equipo" id="id_tipo_equipo" class="form-control" >
-									<option value="">Seleccione...</option>
+									<option value=''>Select ...</option>
 									<?php for ($i = 0; $i < count($tipoEquipo); $i++) { ?>
 										<option value="<?php echo $tipoEquipo[$i]["id_tipo_equipo"]; ?>" <?php if($_POST && $_POST["id_tipo_equipo"] == $tipoEquipo[$i]["id_tipo_equipo"]) { echo "selected"; }  ?>><?php echo $tipoEquipo[$i]["tipo_equipo"]; ?></option>	
 									<?php } ?>
@@ -115,7 +116,7 @@ $(function(){
 <?php 										
 	if(!$info){ 
 		echo '<div class="col-lg-12">
-				<p class="text-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> No hay registros en el sistema.</p>
+				<p class="text-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> There are no records in the system.</p>
 			</div>';
 	}else{
 ?>

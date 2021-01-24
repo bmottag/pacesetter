@@ -20,34 +20,31 @@
 
 			<div class="form-group">
 				<div class="row" align="center">
-						<?php echo '<strong>No. Inventario:</strong> ' . $info[0]['numero_inventario']; ?>
+						<?php echo '<strong>Vin Number:</strong> ' . $info[0]['numero_inventario']; ?>
 				</div>
 			</div>
 		
 			<div class="list-group">
 				<a href="<?php echo base_url('equipos/detalle/' . $info[0]['id_equipo']); ?>" class="btn btn-info btn-block">
-					<i class="fa fa-tag"></i> Información General
-				</a>
-				<a href="<?php echo base_url('equipos/especifico/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-tags"></i> Información Específica
+					<i class="fa fa-tag"></i> General Information
 				</a>
 				<a href="<?php echo base_url('equipos/foto/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-photo"></i> Foto Equipo
+					<i class="fa fa-photo"></i> Photo
 				</a>
 				<a href="<?php echo base_url('equipos/localizacion/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-thumb-tack"></i> Localización
+					<i class="fa fa-thumb-tack"></i> Location
 				</a>
 				<a href="<?php echo base_url('equipos/combustible/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-tint"></i> Seguimiento Operación
+					<i class="fa fa-tint"></i> Operation Check
 				</a>
 				<a href="<?php echo base_url('equipos/poliza/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-book"></i> Pólizas
+					<i class="fa fa-book"></i> Documents
 				</a>
 				<a href="<?php echo base_url('mantenimiento/correctivo/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-wrench"></i> Mantenimiento Correctivo
+					<i class="fa fa-wrench"></i> Corrective Maintenance
 				</a>
 				<a href="<?php echo base_url('inspection/set_vehicle/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-book"></i> Diagnóstico Periódico
+					<i class="fa fa-book"></i> Inspection
 				</a>
 			</div>
 
@@ -56,7 +53,7 @@
 		<div class="col-lg-9">
 			<div class="panel panel-info">
 				<div class="panel-heading">
-					<i class="fa fa-tag"></i> <strong>INFORMACIÓN GENERAL DEL EQUIPO</strong>
+					<i class="fa fa-tag"></i> <strong>GENERAL INFORMATION</strong>
 				</div>
 				<div class="panel-body">
 
@@ -91,8 +88,8 @@ if ($retornoError) {
 
 						<div class="form-group">
 							<div class="col-sm-6">
-								<label for="numero_inventario">Número Inventario Entidad: </label>
-								<input type="text" id="numero_inventario" name="numero_inventario" class="form-control" value="<?php echo $info?$info[0]["numero_inventario"]:""; ?>" placeholder="Número Inventario Entidad" required <?php echo $deshabilitar; ?>>
+								<label for="numero_inventario">Vin Number: </label>
+								<input type="text" id="numero_inventario" name="numero_inventario" class="form-control" value="<?php echo $info?$info[0]["numero_inventario"]:""; ?>" placeholder="Vin Number" required <?php echo $deshabilitar; ?>>
 							</div>
 
 							<div class="col-sm-6">
@@ -102,26 +99,26 @@ if ($retornoError) {
 												
 						<div class="form-group">
 							<div class="col-sm-6">
-								<label for="marca">Marca: </label>
-								<input type="text" id="marca" name="marca" class="form-control" value="<?php echo $info?$info[0]["marca"]:""; ?>" placeholder="Marca" required <?php echo $deshabilitar; ?>>
+								<label for="marca">Make: </label>
+								<input type="text" id="marca" name="marca" class="form-control" value="<?php echo $info?$info[0]["marca"]:""; ?>" placeholder="Make" required <?php echo $deshabilitar; ?>>
 							</div>
 							
 							<div class="col-sm-6">
-								<label for="modelo">Modelo: </label>
-								<input type="text" id="modelo" name="modelo" class="form-control" value="<?php echo $info?$info[0]["modelo"]:""; ?>" placeholder="Modelo" required <?php echo $deshabilitar; ?>>
+								<label for="modelo">Model: </label>
+								<input type="text" id="modelo" name="modelo" class="form-control" value="<?php echo $info?$info[0]["modelo"]:""; ?>" placeholder="Model" required <?php echo $deshabilitar; ?>>
 							</div>	
 						</div>
 						
 						<div class="form-group">
 							<div class="col-sm-6">
-								<label for="from">Número Serial: </label>
-								<input type="text" id="numero_serial" name="numero_serial" class="form-control" value="<?php echo $info?$info[0]["numero_serial"]:""; ?>" placeholder="Número Serial" required <?php echo $deshabilitar; ?>>
+								<label for="from">Serial Number: </label>
+								<input type="text" id="numero_serial" name="numero_serial" class="form-control" value="<?php echo $info?$info[0]["numero_serial"]:""; ?>" placeholder="Serial Number" required <?php echo $deshabilitar; ?>>
 							</div>
 							
 							<div class="col-sm-6">
-								<label for="from">Tipo Equipo: </label>
+								<label for="from">Equipment Type: </label>
 								<select name="id_tipo_equipo" id="id_tipo_equipo" class="form-control" required <?php echo $deshabilitar; ?>>
-									<option value="">Seleccione...</option>
+									<option value=''>Select ...</option>
 									<?php for ($i = 0; $i < count($tipoEquipo); $i++) { ?>
 										<option value="<?php echo $tipoEquipo[$i]["id_tipo_equipo"]; ?>" <?php if($info && $info[0]["fk_id_tipo_equipo"] == $tipoEquipo[$i]["id_tipo_equipo"]) { echo "selected"; }  ?>><?php echo $tipoEquipo[$i]["tipo_equipo"]; ?></option>	
 									<?php } ?>
@@ -131,17 +128,17 @@ if ($retornoError) {
 						
 						<div class="form-group">
 							<div class="col-sm-6">
-								<label for="from">Estado: </label>
+								<label for="from">State: </label>
 								<select name="estado" id="estado" class="form-control" required <?php echo $deshabilitar; ?>>
 									<option value=''>Select...</option>
-									<option value=1 <?php if($info && $info[0]["estado_equipo"] == 1) { echo "selected"; }  ?>>Activo</option>
-									<option value=2 <?php if($info && $info[0]["estado_equipo"] == 2) { echo "selected"; }  ?>>Inactivo</option>
+									<option value=1 <?php if($info && $info[0]["estado_equipo"] == 1) { echo "selected"; }  ?>>Active</option>
+									<option value=2 <?php if($info && $info[0]["estado_equipo"] == 2) { echo "selected"; }  ?>>Inactive</option>
 								</select>
 							</div>
 						
 							<div class="col-sm-6">
-								<label for="valor_comercial">Valor Comercial: </label>
-								<input type="text" id="valor_comercial" name="valor_comercial" class="form-control" value="<?php echo $info?$info[0]["valor_comercial"]:""; ?>" placeholder="Valor Comercial" <?php echo $deshabilitar; ?>>
+								<label for="valor_comercial">Value: </label>
+								<input type="text" id="valor_comercial" name="valor_comercial" class="form-control" value="<?php echo $info?$info[0]["valor_comercial"]:""; ?>" placeholder="Value" <?php echo $deshabilitar; ?>>
 							</div>
 						</div>
 												
@@ -156,13 +153,13 @@ if ($retornoError) {
 </script>
 						<div class="form-group">
 							<div class="col-sm-6">
-								<label for="fecha_adquisicion">Fecha Adquisición: </label>
-								<input type="text" class="form-control" id="fecha_adquisicion" name="fecha_adquisicion" value="<?php echo $info?$info[0]["fecha_adquisicion"]:""; ?>" placeholder="Fecha Adquisición" <?php echo $deshabilitar; ?>/>
+								<label for="fecha_adquisicion">Purchase Date: </label>
+								<input type="text" class="form-control" id="fecha_adquisicion" name="fecha_adquisicion" value="<?php echo $info?$info[0]["fecha_adquisicion"]:""; ?>" placeholder="Purchase Date" <?php echo $deshabilitar; ?>/>
 							</div>
 						
 							<div class="col-sm-6">
-								<label for="observacion">Observación: </label>
-								<textarea id="observacion" name="observacion" placeholder="Observación" class="form-control" rows="3" <?php echo $deshabilitar; ?>><?php echo $info?$info[0]["observacion"]:""; ?></textarea>
+								<label for="observacion">Observation: </label>
+								<textarea id="observacion" name="observacion" placeholder="Observation" class="form-control" rows="3" <?php echo $deshabilitar; ?>><?php echo $info?$info[0]["observacion"]:""; ?></textarea>
 							</div>
 						</div>
 

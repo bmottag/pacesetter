@@ -20,22 +20,20 @@
 		
 			<div class="list-group">
 				<a href="<?php echo base_url('equipos/detalle/' . $info[0]['id_equipo']); ?>" class="btn btn-info btn-block">
-					<i class="fa fa-tag"></i> Información General
+					<i class="fa fa-tag"></i> General Information
 				</a>
-				<a href="<?php echo base_url('equipos/especifico/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-tags"></i> Información Específica
-				</a>
+
 				<a href="<?php echo base_url('equipos/foto/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-photo"></i> Foto Equipo
+					<i class="fa fa-photo"></i> Photo
 				</a>
 				<a href="<?php echo base_url('equipos/localizacion/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-thumb-tack"></i> Localización
+					<i class="fa fa-thumb-tack"></i> Location
 				</a>
 				<a href="<?php echo base_url('equipos/combustible/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-tint"></i> Seguimiento Operación
+					<i class="fa fa-tint"></i> Operation Check
 				</a>
 				<a href="<?php echo base_url('equipos/poliza/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-book"></i> Pólizas
+					<i class="fa fa-book"></i> Documents
 				</a>
 				<a href="<?php echo base_url('inspection/set_vehicle/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
 					<i class="fa fa-book"></i> Inspección
@@ -89,7 +87,7 @@ if ($retornoError) {
 							<div class="col-sm-6">
 								<label for="dependencia">Dependencia: </label>
 								<select name="id_dependencia" id="id_dependencia" class="form-control" required>
-									<option value="">Seleccione...</option>
+									<option value=''>Select ...</option>
 									<?php for ($i = 0; $i < count($dependencias); $i++) { ?>
 										<option value="<?php echo $dependencias[$i]["id_dependencia"]; ?>" <?php if($info && $info[0]["fk_id_dependencia"] == $dependencias[$i]["id_dependencia"]) { echo "selected"; }  ?>><?php echo $dependencias[$i]["dependencia"]; ?></option>	
 									<?php } ?>
@@ -118,7 +116,7 @@ if ($retornoError) {
 							<div class="col-sm-6">
 								<label for="from">Tipo Equipo: </label>
 								<select name="id_tipo_equipo" id="id_tipo_equipo" class="form-control" required>
-									<option value="">Seleccione...</option>
+									<option value=''>Select ...</option>
 									<?php for ($i = 0; $i < count($tipoEquipo); $i++) { ?>
 										<option value="<?php echo $tipoEquipo[$i]["id_tipo_equipo"]; ?>" <?php if($info && $info[0]["fk_id_tipo_equipo"] == $tipoEquipo[$i]["id_tipo_equipo"]) { echo "selected"; }  ?>><?php echo $tipoEquipo[$i]["tipo_equipo"]; ?></option>	
 									<?php } ?>

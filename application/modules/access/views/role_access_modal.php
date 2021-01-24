@@ -17,7 +17,7 @@
 				<div class="form-group text-left">
 					<label class="control-label" for="perfil">Nombre Menú: *</label>
 					<select name="id_menu" id="id_menu" class="form-control" required>
-						<option value="">Seleccione...</option>
+						<option value=''>Select ...</option>
 						<?php for ($i = 0; $i < count($menuList); $i++) { ?>
 							<option value="<?php echo $menuList[$i]["id_menu"]; ?>" <?php if($information && $information[0]["fk_id_menu"] == $menuList[$i]["id_menu"]) { echo "selected"; }  ?>><?php echo $menuList[$i]["menu_name"]; ?></option>	
 						<?php } ?>
@@ -36,7 +36,7 @@
 				<div class="form-group text-left">
 					<label class="control-label" for="perfil">Nombre Submenú: *</label>
 					<select name="id_link" id="id_link" class="form-control" >
-						<option value="">Seleccione...</option>
+						<option value=''>Select ...</option>
 						<?php 
 						if($linkList){
 							for ($i = 0; $i < count($linkList); $i++) { 
@@ -56,7 +56,7 @@
 				<div class="form-group text-left">
 					<label class="control-label" for="id_role">Nombre Rol: *</label>
 					<select name="id_role" id="id_role" class="form-control" required>
-						<option value="">Seleccione...</option>
+						<option value=''>Select ...</option>
 						<?php for ($i = 0; $i < count($roles); $i++) { ?>
 							<option value="<?php echo $roles[$i]["id_role"]; ?>" <?php if($information && $information[0]["fk_id_role"] == $roles[$i]["id_role"]) { echo "selected"; }  ?>><?php echo $roles[$i]["role_name"]; ?></option>	
 						<?php } ?>

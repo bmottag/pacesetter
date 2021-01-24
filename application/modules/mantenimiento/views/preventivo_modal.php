@@ -12,7 +12,7 @@
 				<div class="form-group text-left">
 					<label for="from">Tipo Equipo: *</label>
 					<select name="id_tipo_equipo" id="id_tipo_equipo" class="form-control" required >
-						<option value="">Seleccione...</option>
+						<option value=''>Select ...</option>
 						<?php for ($i = 0; $i < count($tipoEquipo); $i++) { ?>
 							<option value="<?php echo $tipoEquipo[$i]["id_tipo_equipo"]; ?>"><?php echo $tipoEquipo[$i]["tipo_equipo"]; ?></option>
 						<?php } ?>
@@ -23,7 +23,7 @@
 				<div class="form-group text-left">
 					<label for="frecuencia">Frecuencia: *</label>
 					<select name="frecuencia" id="frecuencia" class="form-control" required >
-						<option value="">Seleccione...</option>
+						<option value=''>Select ...</option>
 						<?php for ($i = 0; $i < count($frecuencia); $i++) { ?>
 							<option value="<?php echo $frecuencia[$i]["id_frecuencia"]; ?>"><?php echo $frecuencia[$i]["frecuencia"]; ?></option>
 						<?php } ?>

@@ -32,7 +32,7 @@ $(function(){
 							<div class="col-sm-5 col-sm-offset-1">
 								<label for="from">Tipo Equipo</label>
 								<select name="tipo_equipo" id="tipo_equipo" class="form-control" >
-									<option value="">Seleccione...</option>
+									<option value=''>Select ...</option>
 									<?php for ($i = 0; $i < count($tipoEquipo); $i++) { ?>
 										<option value="<?php echo $tipoEquipo[$i]["id_tipo_equipo"]; ?>"><?php echo $tipoEquipo[$i]["tipo_equipo"]; ?></option>
 									<?php } ?>
@@ -41,7 +41,7 @@ $(function(){
 							<div class="col-sm-5">
 								<label for="frecuencia">Frecuencia</label>
 								<select name="frecuencia" id="frecuencia" class="form-control" >
-									<option value="">Seleccione...</option>
+									<option value=''>Select ...</option>
 									<?php for ($i = 0; $i < count($frecuencia); $i++) { ?>
 										<option value="<?php echo $frecuencia[$i]["id_frecuencia"]; ?>"><?php echo $frecuencia[$i]["frecuencia"]; ?></option>
 									<?php } ?>
@@ -78,7 +78,7 @@ $(function(){
 				<?php
 					if(!$info){
 						echo '<div class="col-lg-12">
-						<p class="text-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> No hay registros en el sistema.</p>
+						<p class="text-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> There are no records in the system.</p>
 						</div>';
 					} else {
 				?>

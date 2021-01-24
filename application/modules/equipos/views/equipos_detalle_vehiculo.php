@@ -18,34 +18,34 @@
 
 			<div class="form-group">
 				<div class="row" align="center">
-						<?php echo '<strong>No. Inventario:</strong> ' . $info[0]['numero_inventario']; ?>
+						<?php echo '<strong>Vin Number:</strong> ' . $info[0]['numero_inventario']; ?>
 				</div>
 			</div>
 		
 			<div class="list-group">
 				<a href="<?php echo base_url('equipos/detalle/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-tag"></i> Información General
+					<i class="fa fa-tag"></i> General Information
 				</a>
 				<a href="<?php echo base_url('equipos/especifico/' . $info[0]['id_equipo']); ?>" class="btn btn-success btn-block">
-					<i class="fa fa-tags"></i> Información Específica
+					<i class="fa fa-tags"></i> Specific Information
 				</a>
 				<a href="<?php echo base_url('equipos/foto/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-photo"></i> Foto Equipo
+					<i class="fa fa-photo"></i> Photo
 				</a>
 				<a href="<?php echo base_url('equipos/localizacion/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-thumb-tack"></i> Localización
+					<i class="fa fa-thumb-tack"></i> Location
 				</a>
 				<a href="<?php echo base_url('equipos/combustible/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-tint"></i> Seguimiento Operación
+					<i class="fa fa-tint"></i> Operation Check
 				</a>
 				<a href="<?php echo base_url('equipos/poliza/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-book"></i> Pólizas
+					<i class="fa fa-book"></i> Documents
 				</a>
 				<a href="<?php echo base_url('mantenimiento/correctivo/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-wrench"></i> Mantenimiento Correctivo
+					<i class="fa fa-wrench"></i> Corrective Maintenance
 				</a>
 				<a href="<?php echo base_url('inspection/set_vehicle/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-book"></i> Diagnóstico Periódico
+					<i class="fa fa-book"></i> Inspection
 				</a>
 			</div>
 
@@ -54,7 +54,7 @@
 		<div class="col-lg-9">
 			<div class="panel panel-success">
 				<div class="panel-heading">
-					<i class="fa fa-tags"></i> <strong>INFORMACIÓN ESPECÍFICA</strong>
+					<i class="fa fa-tags"></i> <strong>SPECIFIC INFORMATION</strong>
 				</div>
 				<div class="panel-body">
 
@@ -110,7 +110,7 @@ if ($retornoError) {
 							<div class="col-sm-6">
 								<label for="from">Clase Vehículo: </label>
 								<select name="id_clase_vechiculo" id="id_clase_vechiculo" class="form-control" >
-									<option value="">Seleccione...</option>
+									<option value=''>Select ...</option>
 									<?php 									
 									for ($i = 0; $i < count($claseVehiculo); $i++) { ?>
 										<option value="<?php echo $claseVehiculo[$i]["id_clase_vechiculo"]; ?>" <?php if($infoEspecifica && $infoEspecifica[0]["fk_id_clase_vechiculo"] == $claseVehiculo[$i]["id_clase_vechiculo"]) { echo "selected"; }  ?>><?php echo $claseVehiculo[$i]["clase_vehiculo"]; ?></option>	
@@ -123,7 +123,7 @@ if ($retornoError) {
 							<div class="col-sm-6">
 								<label for="from">Tipo Carrocería: </label>
 								<select name="id_tipo_carroceria" id="id_tipo_carroceria" class="form-control" >
-									<option value="">Seleccione...</option>
+									<option value=''>Select ...</option>
 									<?php for ($i = 0; $i < count($tipoCarroceria); $i++) { ?>
 										<option value="<?php echo $tipoCarroceria[$i]["id_tipo_carroceria"]; ?>" <?php if($infoEspecifica && $infoEspecifica[0]["fk_id_tipo_carroceria"] == $tipoCarroceria[$i]["id_tipo_carroceria"]) { echo "selected"; }  ?>><?php echo $tipoCarroceria[$i]["tipo_carroceria"]; ?></option>	
 									<?php } ?>

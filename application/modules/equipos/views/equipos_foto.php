@@ -18,34 +18,31 @@
 
 			<div class="form-group">
 				<div class="row" align="center">
-						<?php echo '<strong>No. Inventario:</strong> ' . $info[0]['numero_inventario']; ?>
+						<?php echo '<strong>Vin Number:</strong> ' . $info[0]['numero_inventario']; ?>
 				</div>
 			</div>
 		
 			<div class="list-group">
 				<a href="<?php echo base_url('equipos/detalle/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-tag"></i> Información General
-				</a>
-				<a href="<?php echo base_url('equipos/especifico/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-tags"></i> Información Específica
+					<i class="fa fa-tag"></i> General Information
 				</a>
 				<a href="<?php echo base_url('equipos/foto/' . $info[0]['id_equipo']); ?>" class="btn btn-warning btn-block">
-					<i class="fa fa-photo"></i> Foto Equipo
+					<i class="fa fa-photo"></i> Photo
 				</a>
 				<a href="<?php echo base_url('equipos/localizacion/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-thumb-tack"></i> Localización
+					<i class="fa fa-thumb-tack"></i> Location
 				</a>
 				<a href="<?php echo base_url('equipos/combustible/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-tint"></i> Seguimiento Operación
+					<i class="fa fa-tint"></i> Operation Check
 				</a>
 				<a href="<?php echo base_url('equipos/poliza/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-book"></i> Pólizas
+					<i class="fa fa-book"></i> Documents
 				</a>
 				<a href="<?php echo base_url('mantenimiento/correctivo/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-wrench"></i> Mantenimiento Correctivo
+					<i class="fa fa-wrench"></i> Corrective Maintenance
 				</a>
 				<a href="<?php echo base_url('inspection/set_vehicle/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-book"></i> Diagnóstico Periódico
+					<i class="fa fa-book"></i> Inspection
 				</a>
 			</div>
 
@@ -54,7 +51,7 @@
 		<div class="col-lg-9 col-md-9">
 			<div class="panel panel-warning">
 				<div class="panel-heading">
-					<i class="fa fa-image"></i> <strong>FOTO EQUIPO</strong>
+					<i class="fa fa-image"></i> <strong>PHOTO</strong>
 				</div>
 				<div class="panel-body">
 					<div class="col-lg-8">
@@ -62,7 +59,7 @@
 						<div class="form-group">
 							<div class="col-lg-12">
 								<p class="text-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> 
-									<strong>Subir</strong> foto del equipo
+									<strong>Upload</strong> the equipment photo
 								</p>
 							</div>
 						</div>
@@ -71,16 +68,16 @@
 
 							<input type="hidden" id="hddId" name="hddId" value="<?php echo $info[0]['id_equipo']; ?>"/>
 							<div class="form-group">
-								<label class="col-sm-3" for="comments">Foto:</label>
+								<label class="col-sm-3" for="comments">Photo:</label>
 								<div class="col-sm-5">
 									 <input type="file" name="userfile" />
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-sm-3" for="descripcion">Descripción:</label>
+								<label class="col-sm-3" for="descripcion">Description:</label>
 								<div class="col-sm-8">
-								<input type="text" id="descripcion" name="descripcion" class="form-control" placeholder="Descripción" required >
+								<input type="text" id="descripcion" name="descripcion" class="form-control" placeholder="Description" required >
 								</div>
 							</div>
 							
@@ -107,11 +104,11 @@
 					
 					<div class="col-lg-4">
 						<div class="alert alert-warning">
-								<strong>Nota :</strong><br>
-								Formato permitido: gif - jpg - png<br>
-								Tamaño máximo: 3000 KB<br>
-								Ancho máximo: 2024 pixels<br>
-								Altura máxima: 2008 pixels
+								<strong>Note:</strong><br>
+								Allowed format: gif - jpg - png<br>
+								Maximum size: 3000 KB<br>
+								Maximum width: 2024 pixels<br>
+								Maximum height: 2008 pixels
 						</div>
 					</div>
 								
@@ -123,10 +120,10 @@
 			?>
 			<table class="table table-bordered table-striped table-hover table-condensed">
 				<tr class="dafault">
-					<th class="text-center">Foto</th>
-					<th class="text-center">Usuario</th>
-					<th class="text-center">Descripción</th>
-					<th class="text-center">Eliminar</th>
+					<th class="text-center">Photo</th>
+					<th class="text-center">User</th>
+					<th class="text-center">Description</th>
+					<th class="text-center">Delete</th>
 				</tr>
 				<?php
 					foreach ($fotosEquipos as $data):

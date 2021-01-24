@@ -43,7 +43,7 @@
 				<div class="form-group text-left">
 					<label class="control-label" for="menu_type">Tipo Menú: *</label>
 					<select name="menu_type" id="menu_type" class="form-control" required>
-						<option value=''>Seleccione...</option>
+						<option value=''>Select ...</option>
 						<option value=1 <?php if($information && $information[0]["menu_type"] == 1) { echo "selected"; }  ?>>Menú Lateral</option>
 						<option value=2 <?php if($information && $information[0]["menu_type"] == 2) { echo "selected"; }  ?>>Menú Superior</option>
 					</select>
@@ -56,7 +56,7 @@
 				<div class="form-group text-left">
 					<label class="control-label" for="menu_state">Estado: *</label>
 					<select name="menu_state" id="menu_state" class="form-control" required>
-						<option value=''>Seleccione...</option>
+						<option value=''>Select ...</option>
 						<option value=1 <?php if($information && $information[0]["menu_state"] == 1) { echo "selected"; }  ?>>Activo</option>
 						<option value=2 <?php if($information && $information[0]["menu_state"] == 2) { echo "selected"; }  ?>>Inactivo</option>
 					</select>

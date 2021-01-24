@@ -50,34 +50,32 @@ $(function(){
 
 			<div class="form-group">
 				<div class="row" align="center">
-						<?php echo '<strong>No. Inventario:</strong> ' . $info[0]['numero_inventario']; ?>
+						<?php echo '<strong>Vin Number:</strong> ' . $info[0]['numero_inventario']; ?>
 				</div>
 			</div>
 		
 			<div class="list-group">
 				<a href="<?php echo base_url('equipos/detalle/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-tag"></i> Información General
+					<i class="fa fa-tag"></i> General Information
 				</a>
-				<a href="<?php echo base_url('equipos/especifico/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-tags"></i> Información Específica
-				</a>
+
 				<a href="<?php echo base_url('equipos/foto/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-photo"></i> Foto Equipo
+					<i class="fa fa-photo"></i> Photo
 				</a>
 				<a href="<?php echo base_url('equipos/localizacion/' . $info[0]['id_equipo']); ?>" class="btn btn-danger btn-block">
-					<i class="fa fa-thumb-tack"></i> Localización
+					<i class="fa fa-thumb-tack"></i> Location
 				</a>
 				<a href="<?php echo base_url('equipos/combustible/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-tint"></i> Seguimiento Operación
+					<i class="fa fa-tint"></i> Operation Check
 				</a>
 				<a href="<?php echo base_url('equipos/poliza/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-book"></i> Pólizas
+					<i class="fa fa-book"></i> Documents
 				</a>
 				<a href="<?php echo base_url('mantenimiento/correctivo/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-wrench"></i> Mantenimiento Correctivo
+					<i class="fa fa-wrench"></i> Corrective Maintenance
 				</a>
 				<a href="<?php echo base_url('inspection/set_vehicle/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
-					<i class="fa fa-book"></i> Diagnóstico Periódico
+					<i class="fa fa-book"></i> Inspection
 				</a>
 			</div>
 
@@ -86,12 +84,12 @@ $(function(){
 		<div class="col-lg-9">
 			<div class="panel panel-danger">
 				<div class="panel-heading">
-					<i class="fa fa-tag"></i> LOCALIZACIÓN DEL EQUIPO
+					<i class="fa fa-tag"></i> LOCATION
 				</div>
 				<div class="panel-body">
 				
 					<button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#modal" id="<?php echo $info[0]['id_equipo']; ?>">
-							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar Localización del Equipo
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Location
 					</button><br>
 
 					
@@ -124,16 +122,16 @@ if ($retornoError) {
 <?php 										
 	if(!$listadoLocalizacion){ 
 		echo '<div class="col-lg-12">
-				<p class="text-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> No hay registros en el sistema.</p>
+				<p class="text-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> There are no records in the system.</p>
 			</div>';
 	}else{
 ?>
 					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables">
 						<thead>
 							<tr>
-								<th class="text-center">Fecha</th>
-								<th class="text-center">Localización</th>
-								<th class="text-center">Usuario</th>
+								<th class="text-center">Date</th>
+								<th class="text-center">Location</th>
+								<th class="text-center">User</th>
 								<th class="text-center">Edit</th>
 							</tr>
 						</thead>

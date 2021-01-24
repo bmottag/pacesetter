@@ -397,7 +397,7 @@ class Access extends CI_Controller {
 		);
 		$linkList = $this->general_model->get_links($arrParam);
 
-        echo "<option value=''>Seleccione...</option>";
+        echo "<option value=''>Select ...</option>";
         if ($linkList) {
             foreach ($linkList as $fila) {
                 echo "<option value='" . $fila["id_link"] . "' >" . $fila["link_name"] . "</option>";

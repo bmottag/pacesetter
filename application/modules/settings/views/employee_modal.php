@@ -54,7 +54,7 @@
 				<div class="form-group text-left">
 					<label class="control-label" for="id_role">Rol Usuario: *</label>					
 					<select name="id_role" id="id_role" class="form-control" required>
-						<option value="">Seleccione...</option>
+						<option value=''>Select ...</option>
 						<?php for ($i = 0; $i < count($roles); $i++) { ?>
 							<option value="<?php echo $roles[$i]["id_role"]; ?>" <?php if($information && $information[0]["fk_id_user_role"] == $roles[$i]["id_role"]) { echo "selected"; }  ?>><?php echo $roles[$i]["role_name"]; ?></option>	
 						<?php } ?>
@@ -67,7 +67,7 @@
 				<div class="form-group text-left">
 					<label class="control-label" for="state">Estado: *</label>
 					<select name="state" id="state" class="form-control" required>
-						<option value=''>Seleccione...</option>
+						<option value=''>Select ...</option>
 						<option value=1 <?php if($information[0]["state"] == 1) { echo "selected"; }  ?>>Activo</option>
 						<option value=2 <?php if($information[0]["state"] == 2) { echo "selected"; }  ?>>Inactivo</option>
 					</select>

@@ -58,7 +58,7 @@
 				<div class="form-group text-left">
 					<label class="control-label" for="link_state">Estado: *</label>
 					<select name="link_state" id="link_state" class="form-control" required>
-						<option value=''>Seleccione...</option>
+						<option value=''>Select ...</option>
 						<option value=1 <?php if($information && $information[0]["link_state"] == 1) { echo "selected"; }  ?>>Activo</option>
 						<option value=2 <?php if($information && $information[0]["link_state"] == 2) { echo "selected"; }  ?>>Inactivo</option>
 					</select>
@@ -78,7 +78,7 @@
 				<div class="form-group text-left">
 					<label class="control-label" for="link_type">Tipo Enlace: *</label>
 					<select name="link_type" id="link_type" class="form-control" required>
-						<option value=''>Seleccione...</option>
+						<option value=''>Select ...</option>
 						<option value=1 <?php if($information && $information[0]["link_type"] == 1) { echo "selected"; }  ?>>URL interna</option>
 						<option value=2 <?php if($information && $information[0]["link_type"] == 2) { echo "selected"; }  ?>>URL externa</option>
 						<option value=3 <?php if($information && $information[0]["link_type"] == 3) { echo "selected"; }  ?>>Divider</option>

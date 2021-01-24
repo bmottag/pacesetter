@@ -2,8 +2,8 @@
 
 <div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	<h4 class="modal-title" id="exampleModalLabel">Formulario de Equipos
-	<br><small>Adicionar/Editar Equipo</small>
+	<h4 class="modal-title" id="exampleModalLabel">Equipment form
+	<br><small>Add/Edit Equipment</small>
 	</h4>
 </div>
 
@@ -14,20 +14,14 @@
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="numero_inventario">No. Inventario Entidad: *</label>
-					<input type="text" id="numero_inventario" name="numero_inventario" class="form-control" value="<?php echo $information?$information[0]["numero_inventario"]:""; ?>" placeholder="No. Inventario Entidad" required >
+					<label class="control-label" for="numero_inventario">Vin Number: *</label>
+					<input type="text" id="numero_inventario" name="numero_inventario" class="form-control" value="<?php echo $information?$information[0]["numero_inventario"]:""; ?>" placeholder="Vin Number" required >
 				</div>
 			</div>
 			
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="id_dependencia">Depedencia: *</label>
-					<select name="id_dependencia" id="id_dependencia" class="form-control" required>
-						<option value="">Seleccione...</option>
-						<?php for ($i = 0; $i < count($dependencias); $i++) { ?>
-							<option value="<?php echo $dependencias[$i]["id_dependencia"]; ?>" <?php if($information && $information[0]["fk_id_dependencia"] == $dependencias[$i]["id_dependencia"]) { echo "selected"; }  ?>><?php echo $dependencias[$i]["dependencia"]; ?></option>	
-						<?php } ?>
-					</select>
+
 				</div>
 			</div>
 		</div>
@@ -35,15 +29,15 @@
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="marca">Marca: *</label>
-					<input type="text" id="marca" name="marca" class="form-control" value="<?php echo $information?$information[0]["marca"]:""; ?>" placeholder="Marca" required >
+					<label class="control-label" for="marca">Make: *</label>
+					<input type="text" id="marca" name="marca" class="form-control" value="<?php echo $information?$information[0]["marca"]:""; ?>" placeholder="Make" required >
 				</div>
 			</div>
 
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="modelo">Modelo: *</label>
-					<input type="text" id="modelo" name="modelo" class="form-control" value="<?php echo $information?$information[0]["modelo"]:""; ?>" placeholder="Modelo" required >
+					<label class="control-label" for="modelo">Model: *</label>
+					<input type="text" id="modelo" name="modelo" class="form-control" value="<?php echo $information?$information[0]["modelo"]:""; ?>" placeholder="Model" required >
 				</div>
 			</div>
 		</div>
@@ -52,16 +46,16 @@
 	
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="numero_serial">Número Serial: *</label>
-					<input type="text" id="numero_serial" name="numero_serial" class="form-control" value="<?php echo $information?$information[0]["numero_serial"]:""; ?>" placeholder="Número Serial" required >
+					<label class="control-label" for="numero_serial">Serial Number: *</label>
+					<input type="text" id="numero_serial" name="numero_serial" class="form-control" value="<?php echo $information?$information[0]["numero_serial"]:""; ?>" placeholder="Serial Number" required >
 				</div>
 			</div>
 
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="id_tipo_equipo">Tipo Equipo: *</label>
+					<label class="control-label" for="id_tipo_equipo">Equipment Type: *</label>
 					<select name="id_tipo_equipo" id="id_tipo_equipo" class="form-control" required>
-						<option value="">Seleccione...</option>
+						<option value=''>Select ...</option>
 						<?php for ($i = 0; $i < count($tipoEquipo); $i++) { ?>
 							<option value="<?php echo $tipoEquipo[$i]["id_tipo_equipo"]; ?>" <?php if($information && $information[0]["fk_id_tipo_equipo"] == $tipoEquipo[$i]["id_tipo_equipo"]) { echo "selected"; }  ?>><?php echo $tipoEquipo[$i]["tipo_equipo"]; ?></option>	
 						<?php } ?>
@@ -84,18 +78,18 @@
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="estado">Estado: *</label>
+					<label class="control-label" for="estado">State: *</label>
 					<select name="estado" id="estado" class="form-control" required>
 						<option value=''>Select...</option>
-						<option value=1 <?php if($information && $information[0]["estado_equipo"] == 1) { echo "selected"; }  ?>>Activo</option>
-						<option value=2 <?php if($information && $information[0]["estado_equipo"] == 2) { echo "selected"; }  ?>>Inactivo</option>
+						<option value=1 <?php if($information && $information[0]["estado_equipo"] == 1) { echo "selected"; }  ?>>Active</option>
+						<option value=2 <?php if($information && $information[0]["estado_equipo"] == 2) { echo "selected"; }  ?>>Inactive</option>
 					</select>
 				</div>
 			</div>	
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="estado">Fecha Adquisición: *</label>
-					<input type="text" class="form-control" id="fecha_adquisicion" name="fecha_adquisicion" value="" placeholder="Fecha Adquisición" required />
+					<label class="control-label" for="estado">Purchase Date: *</label>
+					<input type="text" class="form-control" id="fecha_adquisicion" name="fecha_adquisicion" value="" placeholder="Purchase Date" required />
 				</div>
 			</div>
 
@@ -104,15 +98,15 @@
 		<div class="row">
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="valor_comercial">Valor Comercial: </label>
-					<input type="text" id="valor_comercial" name="valor_comercial" class="form-control" value="<?php echo $information?$information[0]["valor_comercial"]:""; ?>" placeholder="Valor Comercial" >
+					<label class="control-label" for="valor_comercial">Value: </label>
+					<input type="text" id="valor_comercial" name="valor_comercial" class="form-control" value="<?php echo $information?$information[0]["valor_comercial"]:""; ?>" placeholder="Value" >
 				</div>
 			</div>
 			
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="observacion">Observación: </label>
-					<textarea id="observacion" name="observacion" placeholder="Observación" class="form-control" rows="3"><?php echo $information?$information[0]["observacion"]:""; ?></textarea>
+					<label class="control-label" for="observacion">Observation: </label>
+					<textarea id="observacion" name="observacion" placeholder="Observation" class="form-control" rows="3"><?php echo $information?$information[0]["observacion"]:""; ?></textarea>
 				</div>
 			</div>
 
