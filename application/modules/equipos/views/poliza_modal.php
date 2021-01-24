@@ -100,7 +100,7 @@ if($information){
 			<div class="row" align="center">
 				<div style="width:50%;" align="center">
 					<button type="button" id="btnSubmit" name="btnSubmit" class="btn btn-primary" >
-						Guardar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
+						Save <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 					</button> 
 				</div>
 			</div>

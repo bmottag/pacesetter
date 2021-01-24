@@ -48,7 +48,7 @@ if ($retornoExito) {
 	<div class="col-lg-12">	
 		<div class="alert alert-success ">
 		
-			<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 			<?php echo $retornoExito ?>		
 		</div>
 	</div>
@@ -77,7 +77,7 @@ if ($retornoError) {
 								<th class="text-center">Contacto</th>
 								<th class="text-center">Celular</th>
 								<th class="text-center">Correo</th>
-								<th class="text-center">Editar</th>
+								<th class="text-center">Edit</th>
 							</tr>
 						</thead>
 						<tbody>							
@@ -107,7 +107,7 @@ if($count == 10){
 									echo "<td class='text-center'>";
 						?>
 									<button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal" id="<?php echo $lista['id_proveedor']; ?>" >
-										Editar <span class="glyphicon glyphicon-edit" aria-hidden="true">
+										Edit <span class="glyphicon glyphicon-edit" aria-hidden="true">
 									</button>
 						<?php
 									echo "</td>";

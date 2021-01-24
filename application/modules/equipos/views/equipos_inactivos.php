@@ -18,7 +18,7 @@ if ($retornoExito) {
     ?>
 	<div class="col-lg-12">	
 		<div class="alert alert-success ">
-			<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 			<?php echo $retornoExito ?>		
 		</div>
 	</div>
@@ -68,7 +68,7 @@ if ($retornoError) {
 									if(!$deshabilitar){
 						?>			<br>
 									<button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal" id="<?php echo $lista['id_equipo']; ?>" >
-										Editar <span class="glyphicon glyphicon-edit" aria-hidden="true">
+										Edit <span class="glyphicon glyphicon-edit" aria-hidden="true">
 									</button>
 						<?php
 									}
@@ -81,11 +81,11 @@ if ($retornoError) {
 									echo "<td class='text-center'>";
 									switch ($lista['estado_equipo']) {
 										case 1:
-											$valor = 'Activo';
+											$valor = 'Active';
 											$clase = "text-success";
 											break;
 										case 2:
-											$valor = 'Inactivo';
+											$valor = 'Inactive';
 											$clase = "text-danger";
 											break;
 									}

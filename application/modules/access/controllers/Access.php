@@ -54,14 +54,14 @@ class Access extends CI_Controller {
 			
 			$idEnlace = $this->input->post('hddId');
 			
-			$msj = "Se adicionó un nuevo Menú!";
+			$msj = "You have add a Menu link!";
 			if ($idEnlace != '') {
-				$msj = "Se actualizó el Menú!";
+				$msj = "You have update a Menu link!";
 			}
 
 			if ($this->access_model->saveMenu()) {
 				$data["result"] = true;
-				$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> ' . $msj);
+				$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> ' . $msj);
 			} else {
 				$data["result"] = "error";
 				$this->session->set_flashdata('retornoError', '<strong>Error!</strong> Ask for help');
@@ -118,14 +118,14 @@ class Access extends CI_Controller {
 			
 			$idLink = $this->input->post('hddId');
 			
-			$msj = "Se adicionó un nuevo Submenú!";
+			$msj = "You have add a Submenu link!";
 			if ($idLink != '') {
-				$msj = "Se actualizó el Submenú!";
+				$msj = "You have update a Submenu link!! ";
 			}
 
 			if ($this->access_model->saveLink()) {
 				$data["result"] = true;
-				$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> ' . $msj);
+				$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> ' . $msj);
 			} else {
 				$data["result"] = "error";
 				$this->session->set_flashdata('retornoError', '<strong>Error!</strong> Ask for help');
@@ -193,9 +193,9 @@ class Access extends CI_Controller {
 			
 			$idPermiso = $this->input->post('hddId');
 			
-			$msj = "Se adicionó el nuevo acceso!";
+			$msj = "You have added a new access!";
 			if ($idPermiso != '') {
-				$msj = "Se actualizó el acceso!";
+				$msj = "You have updated an access!";
 			}
 			
 			//para verificar si ya existe este permiso
@@ -210,12 +210,12 @@ class Access extends CI_Controller {
 			
 			if ($result_access) {
 				$data["result"] = "error";
-				$data["mensaje"] = " Error. El acceso ya existe.";
-				$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> El acceso ya existe.');
+				$data["mensaje"] = " Error. The access already exist.";
+				$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> The access already exist.');
 			} else {
 				if ($this->access_model->saveRoleAccess()) {
 					$data["result"] = true;
-					$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> ' . $msj);
+					$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> ' . $msj);
 				} else {
 					$data["result"] = "error";
 					$data["mensaje"] = " Error. Ask for help.";
@@ -278,7 +278,7 @@ class Access extends CI_Controller {
 
 			if ($this->access_model->saveVideo()) {
 				$data["result"] = true;
-				$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> ' . $msj);
+				$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> ' . $msj);
 			} else {
 				$data["result"] = "error";
 				$this->session->set_flashdata('retornoError', '<strong>Error!</strong> Ask for help');
@@ -349,7 +349,7 @@ class Access extends CI_Controller {
 			//insertar datos
 			if($this->access_model->saveManual($path))
 			{
-				$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> Se cargo la información.');
+				$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> Se cargo la información.');
 			}else{
 				$this->session->set_flashdata('retornoError', '<strong>Error!</strong> Ask for help');
 			}
@@ -374,7 +374,7 @@ class Access extends CI_Controller {
 			);
 			
 			if ($this->general_model->deleteRecord($arrParam)) {
-				$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> You have delete the image.');
+				$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> You have delete the image.');
 			} else {
 				$this->session->set_flashdata('retornoError', '<strong>Error!</strong> Ask for help');
 			}
@@ -425,7 +425,7 @@ class Access extends CI_Controller {
 			if ($this->general_model->deleteRecord($arrParam)) 
 			{
 				$data["result"] = true;
-				$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> You have delete the role access.');
+				$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> You have delete the role access.');
 			} else {
 				$data["result"] = "error";
 				$data["mensaje"] = "Error!!! Ask for help.";

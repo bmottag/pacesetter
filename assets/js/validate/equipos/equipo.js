@@ -5,7 +5,6 @@ $( document ).ready( function () {
 	$( "#form" ).validate( {
 		rules: {
 			numero_inventario: 		{ required: true, minlength: 3, maxlength:10 },
-			id_dependencia: 		{ required: true },
 			marca:					{ required: true, minlength: 3, maxlength: 20 },
 			modelo: 				{ required: true, minlength: 3, maxlength: 50 },
 			numero_serial: 			{ required: true, minlength: 3, maxlength: 20 },

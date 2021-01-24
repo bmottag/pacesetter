@@ -80,7 +80,7 @@ $(function(){
 					    ?>
 						<div class="col-lg-12">	
 							<div class="alert alert-success ">
-								<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+								<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 								<?php echo $retornoExito ?>		
 							</div>
 						</div>
@@ -112,7 +112,7 @@ $(function(){
 							<th class="text-center">Consideración</th>
 							<th class="text-center">Usuario</th>
 							<th class="text-center">Estado</th>
-							<th class="text-center">Editar</th>
+							<th class="text-center">Edit</th>
 							<th class="text-center">Foto Falla</th>
 							<th class="text-center">Orden Trabajo</th>
 						</tr>
@@ -126,11 +126,11 @@ $(function(){
 								echo "<td class='text-center'>";
 								switch ($data['estado']) {
 									case 1:
-										$valor = 'Activo';
+										$valor = 'Active';
 										$clase = "text-success";
 										break;
 									case 2:
-										$valor = 'Inactivo';
+										$valor = 'Inactive';
 										$clase = "text-danger";
 										break;
 								}
@@ -139,7 +139,7 @@ $(function(){
 								echo "<td class='text-center'>";
 								?>
 								<button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal" id="<?php echo $data['id_correctivo']; ?>" >
-									Editar <span class="glyphicon glyphicon-edit" aria-hidden="true">
+									Edit <span class="glyphicon glyphicon-edit" aria-hidden="true">
 								</button>
 								<?php
 								echo "</td>";

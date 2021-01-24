@@ -32,7 +32,7 @@ if ($retornoExito) {
     ?>
 	<div class="col-lg-12">	
 		<div class="alert alert-success ">
-			<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 			<?php echo $retornoExito ?>		
 		</div>
 	</div>
@@ -61,7 +61,7 @@ if ($retornoError) {
 								<th class="text-center">URL Enlace</th>
 								<th class="text-center">Orden</th>
 								<th class="text-center">Estado</th>
-								<th class="text-center">Editar</th>
+								<th class="text-center">Edit</th>
 							</tr>
 						</thead>
 						<tbody>							
@@ -74,11 +74,11 @@ if ($retornoError) {
 									echo "<td class='text-center'>";
 									switch ($lista['link_state']) {
 										case 1:
-											$valor = 'Activo';
+											$valor = 'Active';
 											$clase = "text-success";
 											break;
 										case 2:
-											$valor = 'Inactivo';
+											$valor = 'Inactive';
 											$clase = "text-danger";
 											break;
 									}
@@ -88,7 +88,7 @@ if ($retornoError) {
 						?>
 
 <a class='btn btn-success btn-xs' href='<?php echo base_url('access/manuals_form/' . $lista['id_link']) ?>'>
-	Editar <span class="glyphicon glyphicon-edit" aria-hidden="true">
+	Edit <span class="glyphicon glyphicon-edit" aria-hidden="true">
 </a>
 						<?php
 									echo "</td>";

@@ -66,7 +66,7 @@ if ($retornoExito) {
     ?>
 	<div class="col-lg-12">
 		<p class="text-success">
-			<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 			<?php echo $retornoExito ?>	
 		</p>
 	</div>
@@ -96,13 +96,7 @@ if ($retornoError) {
 							</div>
 
 							<div class="col-sm-6">
-								<label for="dependencia">Dependencia: </label>
-								<select name="id_dependencia" id="id_dependencia" class="form-control" required <?php echo $deshabilitar; ?>>
-									<option value="">Seleccione...</option>
-									<?php for ($i = 0; $i < count($dependencias); $i++) { ?>
-										<option value="<?php echo $dependencias[$i]["id_dependencia"]; ?>" <?php if($info && $info[0]["fk_id_dependencia"] == $dependencias[$i]["id_dependencia"]) { echo "selected"; }  ?>><?php echo $dependencias[$i]["dependencia"]; ?></option>	
-									<?php } ?>
-								</select>
+
 							</div>							
 						</div>
 												
@@ -194,7 +188,7 @@ if ($retornoError) {
 							<div class="row" align="center">
 								<div style="width:100%;" align="center">							
 									<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-info'>
-										Guardar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
+										Save <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 									</button>
 								</div>
 							</div>

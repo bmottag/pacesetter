@@ -25,7 +25,7 @@ $(function(){
 		<div class="col-lg-3">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<i class="fa fa-search"></i> BUSCAR EQUIPOS
+					<i class="fa fa-search"></i> SEARCH AN EQUIPMENT
 				</div>
 				<div class="panel-body">
 
@@ -34,14 +34,14 @@ $(function(){
 						<div class="form-group">
 							<div class="col-lg-12">
 								<p class="text-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> 
-									<strong>Seleccionar</strong> mínimo una opción
+									<strong>Select</strong> at least one option
 								</p>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="col-sm-12">
-								<label for="numero_serial">Tipo Equipo:</label>
+								<label for="numero_serial">Equipment Type:</label>
 								<select name="id_tipo_equipo" id="id_tipo_equipo" class="form-control" >
 									<option value="">Seleccione...</option>
 									<?php for ($i = 0; $i < count($tipoEquipo); $i++) { ?>
@@ -53,19 +53,19 @@ $(function(){
 
 						<div class="form-group">
 							<div class="col-sm-12">
-								<input type="text" id="numero_inventario" name="numero_inventario" class="form-control" value="<?php echo $_POST?$this->input->post('numero_inventario'):""; ?>" placeholder="Número Inventario Entidad" >
+								<input type="text" id="numero_inventario" name="numero_inventario" class="form-control" value="<?php echo $_POST?$this->input->post('numero_inventario'):""; ?>" placeholder="Vin Number" >
 							</div>
 						</div>
 
 						<div class="form-group">	
 							<div class="col-sm-12">
-								<input type="text" id="marca" name="marca" class="form-control" value="<?php echo $_POST?$this->input->post('marca'):""; ?>" placeholder="Marca" >
+								<input type="text" id="marca" name="marca" class="form-control" value="<?php echo $_POST?$this->input->post('marca'):""; ?>" placeholder="Make" >
 							</div>
 						</div>
 													
 						<div class="form-group">
 							<div class="col-sm-12">
-								<input type="text" id="numero_serial" name="numero_serial" class="form-control" value="<?php echo $_POST?$this->input->post('numero_serial'):""; ?>" placeholder="Número Serial" >
+								<input type="text" id="numero_serial" name="numero_serial" class="form-control" value="<?php echo $_POST?$this->input->post('numero_serial'):""; ?>" placeholder="Serial Number" >
 							</div>
 						</div>
 						
@@ -74,7 +74,7 @@ $(function(){
 							<div class="row" align="center">
 								<div style="width80%;" align="center">
 									
-								 <button type="submit" class="btn btn-primary" id='btnBuscar' name='btnBuscar'><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar </button>
+								 <button type="submit" class="btn btn-primary" id='btnBuscar' name='btnBuscar'><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search </button>
 									
 								</div>
 							</div>
@@ -109,7 +109,7 @@ $(function(){
 				<div class="panel-body">	
 				
 			<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal" id="x">
-					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar Equipo
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Equipment
 			</button><br>
 
 <?php 										
@@ -123,13 +123,12 @@ $(function(){
 					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables">
 						<thead>
 							<tr>
-								<th class="text-center">No. Inventario Entidad</th>
-								<th class="text-center">Dependencia</th>
-								<th class="text-center">Marca</th>
-								<th class="text-center">Modelo</th>
-								<th class="text-center">Número Serial</th>
-								<th class="text-center">Estado</th>
-								<th class="text-center">Observación</th>
+								<th class="text-center">Vin Number</th>
+								<th class="text-center">Make</th>
+								<th class="text-center">Model</th>
+								<th class="text-center">Serial Number</th>
+								<th class="text-center">State</th>
+								<th class="text-center">Observation</th>
 							</tr>
 						</thead>
 						<tbody>							
@@ -150,24 +149,23 @@ $(function(){
 									if(!$deshabilitar){
 						?>			<br>
 									<button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal" id="<?php echo $lista['id_equipo']; ?>" >
-										Editar <span class="glyphicon glyphicon-edit" aria-hidden="true">
+										Edit <span class="glyphicon glyphicon-edit" aria-hidden="true">
 									</button>
 						<?php
 									}
 									echo "</td>";
 
-									echo "<td class='text-center'>" . $lista['dependencia'] . "</td>";
 									echo "<td>" . $lista['marca'] . "</td>";
 									echo "<td>" . $lista['modelo'] . "</td>";
 									echo "<td class='text-center'>" . $lista['numero_serial'] . "</td>";
 									echo "<td class='text-center'>";
 									switch ($lista['estado_equipo']) {
 										case 1:
-											$valor = 'Activo';
+											$valor = 'Active';
 											$clase = "text-success";
 											break;
 										case 2:
-											$valor = 'Inactivo';
+											$valor = 'Inactive';
 											$clase = "text-danger";
 											break;
 									}

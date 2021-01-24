@@ -27,7 +27,7 @@ class Equipos extends CI_Controller {
 
 			if(!$_POST)
 			{
-				$data['tituloListado'] = 'LISTA DE ÚLTIMOS 10 EQUIPOS REGISTRADOS';
+				$data['tituloListado'] = 'LIST OF LAST 10 REGISTERED EQUIPMENTS';
 				//busco los ultimos 10 equipos de la base de datos
 				$arrParam = array(
 							"estadoEquipo" => $estado,
@@ -36,7 +36,7 @@ class Equipos extends CI_Controller {
 				$data['info'] = $this->general_model->get_equipos_info($arrParam);
 			}elseif($this->input->post('id_tipo_equipo') || $this->input->post('numero_inventario') || $this->input->post('marca') ||  $this->input->post('numero_serial'))
 			{
-				$data['tituloListado'] = 'LISTA DE EQUIPOS QUE COINCIDEN CON SU BUSQUEDA';
+				$data['tituloListado'] = 'LIST OF EQUIPMENT THAT SUITS YOUR SEARCH';
 				
 				$data['idTipoEquipo'] =  $this->input->post('id_tipo_equipo');
 				$data['numero_inventario'] =  $this->input->post('numero_inventario');
@@ -73,14 +73,7 @@ class Equipos extends CI_Controller {
 			
 			$data['information'] = FALSE;
 			$idEquipo = $this->input->post("idEquipo");
-			
-			$arrParam = array(
-				"table" => "param_dependencias",
-				"order" => "dependencia",
-				"id" => "x"
-			);
-			$data['dependencias'] = $this->general_model->get_basic_search($arrParam);
-			
+						
 			$arrParam = array(
 				"table" => "param_tipo_equipos",
 				"order" => "tipo_equipo",
@@ -153,7 +146,7 @@ class Equipos extends CI_Controller {
 					
 					$data["idRecord"] = $idEquipo;
 					$data["result"] = true;		
-					$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> ' . $msj);
+					$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> ' . $msj);
 				} else {
 					$data["result"] = "error";
 					$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> Ask for help');
@@ -221,13 +214,6 @@ class Equipos extends CI_Controller {
 			{
 				$data['deshabilitar'] = 'disabled';
 			}
-
-			$arrParam = array(
-				"table" => "param_dependencias",
-				"order" => "dependencia",
-				"id" => "x"
-			);
-			$data['dependencias'] = $this->general_model->get_basic_search($arrParam);
 			
 			$arrParam = array(
 				"table" => "param_tipo_equipos",
@@ -291,7 +277,7 @@ class Equipos extends CI_Controller {
 			if ($idInfoEspecificaEquipo = $this->equipos_model->$MetodoGuardar()) 
 			{				
 				$data["result"] = true;		
-				$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> ' . $msj);
+				$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> ' . $msj);
 			} else {
 				$data["result"] = "error";
 				$this->session->set_flashdata('retornoError', '<strong>Error!</strong> Ask for help');
@@ -456,7 +442,7 @@ class Equipos extends CI_Controller {
 			if ($idLocalizacion = $this->equipos_model->guardarLocalizacion()) 
 			{				
 				$data["result"] = true;		
-				$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> ' . $msj);
+				$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> ' . $msj);
 			} else {
 				$data["result"] = "error";
 				$this->session->set_flashdata('retornoError', '<strong>Error!</strong> Ask for help');
@@ -499,7 +485,7 @@ class Equipos extends CI_Controller {
 			if ($idControlCombustible = $this->equipos_model->guardarControlCombustible()) 
 			{				
 				$data["result"] = true;		
-				$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> ' . $msj);
+				$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> ' . $msj);
 			} else {
 				$data["result"] = "error";
 				$this->session->set_flashdata('retornoError', '<strong>Error!</strong> Ask for help');
@@ -567,7 +553,7 @@ class Equipos extends CI_Controller {
 			if ($idPoliza = $this->equipos_model->guardarPoliza()) 
 			{				
 				$data["result"] = true;		
-				$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> ' . $msj);
+				$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> ' . $msj);
 			} else {
 				$data["result"] = "error";
 				$this->session->set_flashdata('retornoError', '<strong>Error!</strong> Ask for help');

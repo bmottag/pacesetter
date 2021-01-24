@@ -57,7 +57,7 @@ if ($retornoExito) {
     ?>
 	<div class="col-lg-12">
 		<p class="text-success">
-			<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 			<?php echo $retornoExito ?>	
 		</p>
 	</div>
@@ -179,7 +179,7 @@ if($infoPoliza){
 							<div class="row" align="center">
 								<div style="width:100%;" align="center">							
 									<button type="button" id="btnSubmit" name="btnSubmit" class='btn btn-violeta'>
-										Guardar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
+										Save <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 									</button>
 								</div>
 							</div>
@@ -201,7 +201,7 @@ if($infoPoliza){
 					<th class="text-center">No. Póliza</th>
 					<th class="text-center">Descripción</th>
 <!--					<th class="text-center">Proveedor</th> -->
-					<th class="text-center">Editar</th>
+					<th class="text-center">Edit</th>
 				</tr>
 				<?php
 					foreach ($listadoPolizas as $data):

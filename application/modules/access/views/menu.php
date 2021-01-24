@@ -22,7 +22,7 @@ $(function(){
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h4 class="list-group-item-heading">
-					<i class="fa fa-cogs fa-fw"></i> ADMINISTRAR ACCESO AL SISTEMA
+					<i class="fa fa-cogs fa-fw"></i> MANAGE SYSTEM ACCESS
 					</h4>
 				</div>
 			</div>
@@ -35,11 +35,11 @@ $(function(){
 		<div class="col-lg-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<i class="fa fa-link"></i> ENLACES MENÚ
+					<i class="fa fa-link"></i> MENU LINKS
 				</div>
 				<div class="panel-body">
 					<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal" id="x">
-							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar Enlace al Menú
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Menu Links
 					</button><br>
 <?php
 $retornoExito = $this->session->flashdata('retornoExito');
@@ -47,7 +47,7 @@ if ($retornoExito) {
     ?>
 	<div class="col-lg-12">	
 		<div class="alert alert-success ">
-			<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 			<?php echo $retornoExito ?>		
 		</div>
 	</div>
@@ -78,7 +78,7 @@ if ($retornoError) {
 								<th class="text-center">Icono Menú</th>
 								<th class="text-center">Orden</th>
 								<th class="text-center">Estado</th>
-								<th class="text-center">Editar</th>
+								<th class="text-center">Edit</th>
 							</tr>
 						</thead>
 						<tbody>							
@@ -89,11 +89,11 @@ if ($retornoError) {
 									echo "<td class='text-center'>";
 									switch ($lista['menu_type']) {
 										case 1:
-											$valor = 'Menú Lateral';
+											$valor = 'Side Menu';
 											$clase = "text-success";
 											break;
 										case 2:
-											$valor = 'Menú Superior';
+											$valor = 'Top Menu';
 											$clase = "text-danger";
 											break;
 									}
@@ -107,11 +107,11 @@ if ($retornoError) {
 									echo "<td class='text-center'>";
 									switch ($lista['menu_state']) {
 										case 1:
-											$valor = 'Activo';
+											$valor = 'Active';
 											$clase = "text-success";
 											break;
 										case 2:
-											$valor = 'Inactivo';
+											$valor = 'Inactive';
 											$clase = "text-danger";
 											break;
 									}
@@ -120,7 +120,7 @@ if ($retornoError) {
 									echo "<td class='text-center'>";
 						?>
 									<button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal" id="<?php echo $lista['id_menu']; ?>" >
-										Editar <span class="glyphicon glyphicon-edit" aria-hidden="true">
+										Edit <span class="glyphicon glyphicon-edit" aria-hidden="true">
 									</button>
 						<?php
 									echo "</td>";

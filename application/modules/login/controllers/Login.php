@@ -81,12 +81,12 @@ class Login extends CI_Controller {
 						
 						$this->login_model->redireccionarUsuario();
 					}else{					
-						$data["msj"] = "<strong>" . $userExist[0]["first_name"] . "</strong> esa no es su contraseña.";
+						$data["msj"] = "<strong>" . $userExist[0]["first_name"] . "</strong> that's not your password.";
 						$this->session->sess_destroy();
 						$this->load->view('login', $data);
 					}
 			}else{
-				$data["msj"] = "<strong>" . $login . "</strong> no esta registrado.";
+				$data["msj"] = "<strong>" . $login . "</strong> doesn't exist.";
 				$this->session->sess_destroy();
 				$this->load->view('login', $data);
 			}

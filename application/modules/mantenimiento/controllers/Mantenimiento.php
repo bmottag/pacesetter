@@ -92,7 +92,7 @@ class Mantenimiento extends CI_Controller {
 		if ($this->mantenimientos_model->guardarPreventivo())
 		{				
 			$data["result"] = true;		
-			$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> ' . $msj);
+			$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> ' . $msj);
 		} else {
 			$data["result"] = "error";
 			$this->session->set_flashdata('retornoError', '<strong>Error!</strong> Ask for help');
@@ -152,7 +152,7 @@ class Mantenimiento extends CI_Controller {
 		if ($this->mantenimientos_model->guardarCorrectivo())
 		{				
 			$data["result"] = true;		
-			$this->session->set_flashdata('retornoExito', '<strong>Correcto!</strong> ' . $msj);
+			$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> ' . $msj);
 		} else {
 			$data["result"] = "error";
 			$this->session->set_flashdata('retornoError', '<strong>Error!</strong> Ask for help');

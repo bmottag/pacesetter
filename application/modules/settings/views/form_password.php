@@ -8,7 +8,7 @@
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h4 class="list-group-item-heading">
-						<i class="fa fa-gear fa-fw"></i> CONFIGURACIÓN - USUARIOS
+						<i class="fa fa-gear fa-fw"></i> SETTINGS - USERS
 					</h4>
 				</div>
 			</div>
@@ -21,7 +21,7 @@
 		<div class="col-lg-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<i class="fa fa-unlock"></i> CAMBIAR CONTRASEÑA
+					<i class="fa fa-unlock"></i> CHANGE PASSWORD
 				</div>
 				<div class="panel-body">
 
@@ -69,7 +69,7 @@
 							<div class="row" align="center">
 								<div style="width:50%;" align="center">
 									<button type="button" id="btnSubmit" name="btnSubmit" class="btn btn-primary" >
-										Guardar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
+										Save <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">
 									</button> 
 								</div>
 							</div>

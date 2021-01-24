@@ -98,7 +98,7 @@ if ($retornoExito) {
     ?>
 	<div class="col-lg-12">	
 		<div class="alert alert-success ">
-			<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 			<?php echo $retornoExito ?>		
 		</div>
 	</div>
@@ -135,7 +135,7 @@ if ($retornoError) {
 								<th class="text-center">Cantidad</th>
 								<th class="text-center">Valor</th>
 								<th class="text-center">Labor Realizada</th>
-								<th class="text-center">Editar</th>
+								<th class="text-center">Edit</th>
 							</tr>
 						</thead>
 						<tbody>							
@@ -178,7 +178,7 @@ if ($retornoError) {
 									echo "<td class='text-center'>";
 						?>
 									<button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal" id="<?php echo $lista['id_equipo_control_combustible']; ?>" >
-										Editar <span class="glyphicon glyphicon-edit" aria-hidden="true">
+										Edit <span class="glyphicon glyphicon-edit" aria-hidden="true">
 									</button>
 						<?php
 									echo "</td>";

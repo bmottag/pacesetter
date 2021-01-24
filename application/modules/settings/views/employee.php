@@ -26,7 +26,7 @@ $(function(){
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h4 class="list-group-item-heading">
-					<i class="fa fa-gear fa-fw"></i> CONFIGURACIÓN - USUARIOS
+					<i class="fa fa-gear fa-fw"></i> SETTINGS - USERS
 					</h4>
 				</div>
 			</div>
@@ -39,14 +39,14 @@ $(function(){
 		<div class="col-lg-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<i class="fa fa-users"></i> LISTA DE USUARIOS
+					<i class="fa fa-users"></i> USERS LIST
 				</div>
 				<div class="panel-body">
 				
 					<ul class="nav nav-pills">
-						<li <?php if($state == 1){ echo "class='active'";} ?>><a href="<?php echo base_url("settings/employee/1"); ?>">Usuarios Activos</a>
+						<li <?php if($state == 1){ echo "class='active'";} ?>><a href="<?php echo base_url("settings/employee/1"); ?>">Active Users</a>
 						</li>
-						<li <?php if($state == 2){ echo "class='active'";} ?>><a href="<?php echo base_url("settings/employee/2"); ?>">Usuarios Inactivos</a>
+						<li <?php if($state == 2){ echo "class='active'";} ?>><a href="<?php echo base_url("settings/employee/2"); ?>">Inactive Users</a>
 						</li>
 					</ul>
 					<br>	
@@ -57,7 +57,7 @@ $(function(){
 ?>
 
 					<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal" id="x">
-							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar Usuario
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add User
 					</button><br>
 
 					
@@ -67,7 +67,7 @@ if ($retornoExito) {
     ?>
 	<div class="col-lg-12">	
 		<div class="alert alert-success ">
-			<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 			<?php echo $retornoExito ?>		
 		</div>
 	</div>
@@ -90,7 +90,7 @@ if ($retornoError) {
 <?php 										
 	if(!$info){ 
 		echo '<div class="col-lg-12">
-				<p class="text-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> No hay registros en el sistema.</p>
+				<p class="text-danger"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> There are no records in the system.</p>
 			</div>';
 	}else{
 ?>
@@ -98,19 +98,19 @@ if ($retornoError) {
 						<thead>
 							<tr>
 								<th class="text-center">ID</th>
-								<th class="text-center">Nombre</th>
-								<th class="text-center">Apellido</th>
-								<th class="text-center">Usuario</th>
-								<th class="text-center">Celular</th>
-								<th class="text-center">Rol</th>
-								<th class="text-center">Estado</th>
+								<th class="text-center">Firstname</th>
+								<th class="text-center">Lastname</th>
+								<th class="text-center">User</th>
+								<th class="text-center">Movil number</th>
+								<th class="text-center">User Role</th>
+								<th class="text-center">State</th>
 								
 								<?php if(!$deshabilitar){ ?>
-								<th class="text-center">Editar</th>
-								<th class="text-center">Contraseña</th>
+								<th class="text-center">Edit</th>
+								<th class="text-center">Password</th>
 								<?php } ?>
 								
-								<th class="text-center">Correo</th>
+								<th class="text-center">Email</th>
 							</tr>
 						</thead>
 						<tbody>							
@@ -145,15 +145,15 @@ if($count == 10){
 									echo "<td class='text-center'>";
 									switch ($lista['state']) {
 										case 0:
-											$valor = 'Nuevo Usuario';
+											$valor = 'New User';
 											$clase = "text-primary";
 											break;
 										case 1:
-											$valor = 'Activo';
+											$valor = 'Active';
 											$clase = "text-success";
 											break;
 										case 2:
-											$valor = 'Inactivo';
+											$valor = 'Inactive';
 											$clase = "text-danger";
 											break;
 									}
@@ -166,7 +166,7 @@ if($count == 10){
 									echo "<td class='text-center'>";
 						?>
 									<button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal" id="<?php echo $lista['id_user']; ?>" >
-										Editar <span class="glyphicon glyphicon-edit" aria-hidden="true">
+										Edit <span class="glyphicon glyphicon-edit" aria-hidden="true">
 									</button>
 						<?php
 									echo "</td>";
@@ -176,7 +176,7 @@ if($count == 10){
 										Se quita la opcion de resetear la contraseña a 123456
 									<a href="<?php echo base_url("admin/resetPassword/" . $lista['id_user']); ?>" class="btn btn-default btn-xs">Reset <span class="glyphicon glyphicon-lock" aria-hidden="true"></a> 
 									-->
-									<a href="<?php echo base_url("settings/change_password/" . $lista['id_user']); ?>" class="btn btn-default btn-xs">Cambiar Contraseña <span class="glyphicon glyphicon-lock" aria-hidden="true"></a>
+									<a href="<?php echo base_url("settings/change_password/" . $lista['id_user']); ?>" class="btn btn-default btn-xs">Change Password <span class="glyphicon glyphicon-lock" aria-hidden="true"></a>
 									
 							<?php
 									echo "</td>";

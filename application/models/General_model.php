@@ -264,7 +264,6 @@ class General_model extends CI_Model {
 		public function get_equipos_info($arrData) 
 		{		
 				$this->db->select();
-				$this->db->join('param_dependencias D', 'D.id_dependencia = A.fk_id_dependencia', 'INNER');
 				$this->db->join('param_tipo_equipos T', 'T.id_tipo_equipo = A.fk_id_tipo_equipo', 'INNER');
 
 				if (array_key_exists("idEquipo", $arrData)) {

@@ -13,7 +13,6 @@
 				
 				$data = array(
 					'numero_inventario' => $this->input->post('numero_inventario'),
-					'fk_id_dependencia' => $this->input->post('id_dependencia'),
 					'marca' => $this->input->post('marca'),
 					'modelo' => $this->input->post('modelo'),
 					'numero_serial' => $this->input->post('numero_serial'),
