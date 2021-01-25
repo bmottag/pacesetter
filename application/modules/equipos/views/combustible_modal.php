@@ -3,7 +3,7 @@
 
 <div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	<h4 class="modal-title" id="exampleModalLabel">SEGUIMIENTO DE OPERACIÓN DE EQUIPO </h4>
+	<h4 class="modal-title" id="exampleModalLabel">OPERATION CHECK </h4>
 </div>
 
 <div class="modal-body">
@@ -14,14 +14,14 @@
 		<div class="row">
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="kilometros_actuales">Horas o Kilometros Actuales: *</label>
-					<input type="text" id="kilometros_actuales" name="kilometros_actuales" class="form-control" value="<?php echo $information?$information[0]["kilometros_actuales"]:""; ?>" placeholder="Horas o Kilometros Actuales" >
+					<label class="control-label" for="kilometros_actuales">Current Hours/Kilometers: *</label>
+					<input type="text" id="kilometros_actuales" name="kilometros_actuales" class="form-control" value="<?php echo $information?$information[0]["kilometros_actuales"]:""; ?>" placeholder="Current Hours/Kilometers" >
 				</div>
 			</div>
 		
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="id_operador">Operador: *</label>
+					<label class="control-label" for="id_operador">Operator: *</label>
 					<select name="id_operador" id="id_operador" class="form-control" required>
 						<option value=''>Select ...</option>
 						<?php for ($i = 0; $i < count($listaOperadores); $i++) { ?>
@@ -35,7 +35,7 @@
 		<div class="row">
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="tipo_consumo">Tipo de Consumo: *</label>
+					<label class="control-label" for="tipo_consumo">Fluid Type: *</label>
 					<select name="tipo_consumo" id="tipo_consumo" class="form-control" required>
 						<option value=''>Select ...</option>
 						<option value=1 <?php if($information && $information[0]["tipo_consumo"] == 1) { echo "selected"; }  ?>>Combustible</option>
@@ -49,8 +49,8 @@
 		
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="cantidad">Cantidad: <small>(En Galones)</small>*</label>
-					<input type="text" id="cantidad" name="cantidad" class="form-control" value="<?php echo $information?$information[0]["cantidad"]:""; ?>" placeholder="Cantidad" >
+					<label class="control-label" for="cantidad">Quantity: <small>(En Galones)</small>*</label>
+					<input type="text" id="cantidad" name="cantidad" class="form-control" value="<?php echo $information?$information[0]["cantidad"]:""; ?>" placeholder="Quantity" >
 				</div>
 			</div>
 		</div>
@@ -58,15 +58,15 @@
 		<div class="row">
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="valor">Valor: *</label>
-					<input type="text" id="valor" name="valor" class="form-control" value="<?php echo $information?$information[0]["valor"]:""; ?>" placeholder="Valor" >
+					<label class="control-label" for="valor">Value: *</label>
+					<input type="text" id="valor" name="valor" class="form-control" value="<?php echo $information?$information[0]["valor"]:""; ?>" placeholder="Value" >
 				</div>
 			</div>
 
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="labor_realizada">Labor realizada: *</label>
-					<textarea id="labor_realizada" name="labor_realizada" placeholder="Labor realizada" class="form-control" rows="3"><?php echo $information?$information[0]["labor_realizada"]:""; ?></textarea>
+					<label class="control-label" for="labor_realizada">Task description: *</label>
+					<textarea id="labor_realizada" name="labor_realizada" placeholder="Task description" class="form-control" rows="3"><?php echo $information?$information[0]["labor_realizada"]:""; ?></textarea>
 				</div>
 			</div>
 		

@@ -4,7 +4,7 @@ $( document ).ready( function () {
 			var oID = $(this).attr("id");
 			
 			//Activa icono guardando
-			if(window.confirm('¿Esta seguro de eliminar la foto?'))
+			if(window.confirm('Are you sure to delete the photo?'))
 			{
 					$(".btn-danger").attr('disabled','-1');
 					$.ajax ({

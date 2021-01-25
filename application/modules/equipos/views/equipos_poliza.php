@@ -129,7 +129,7 @@ if ($retornoError) {
 					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables">
 						<thead>
 							<tr>
-								<th class="text-center">Start date</th>
+								<th class="text-center">Start Date</th>
 								<th class="text-center">Expiration Date</th>
 								<th class="text-center">Number</th>
 								<th class="text-center">Description</th>

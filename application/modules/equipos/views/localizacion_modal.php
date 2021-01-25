@@ -2,8 +2,8 @@
 
 <div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	<h4 class="modal-title" id="exampleModalLabel">Localización del Equipo
-	<br><small>Adicionar/Editar Localización</small>
+	<h4 class="modal-title" id="exampleModalLabel">EQUIPMENT LOCATION
+	<br><small>Add/Edit Location</small>
 	</h4>
 </div>
 
@@ -25,15 +25,15 @@
 		<div class="row">	
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="fecha">Fecha: *</label>
-					<input type="text" class="form-control" id="fecha" name="fecha" value="<?php echo $information?$information[0]["fecha_localizacion"]:""; ?>" placeholder="Fecha" required />
+					<label class="control-label" for="fecha">Date: *</label>
+					<input type="text" class="form-control" id="fecha" name="fecha" value="<?php echo $information?$information[0]["fecha_localizacion"]:""; ?>" placeholder="Date" required />
 				</div>
 			</div>
 			
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="localizacion">Localización: </label>
-					<input type="text" id="localizacion" name="localizacion" class="form-control" value="<?php echo $information?$information[0]["localizacion"]:""; ?>" placeholder="Localización" required >
+					<label class="control-label" for="localizacion">Location: </label>
+					<input type="text" id="localizacion" name="localizacion" class="form-control" value="<?php echo $information?$information[0]["localizacion"]:""; ?>" placeholder="Location" required >
 				</div>
 			</div>
 		</div>

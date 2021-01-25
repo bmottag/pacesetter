@@ -2,8 +2,8 @@
 
 <div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	<h4 class="modal-title" id="exampleModalLabel">Póliza del Equipo
-	<br><small>Adicionar/Editar Póliza</small>
+	<h4 class="modal-title" id="exampleModalLabel">DOCUMENT
+	<br><small>Add/Edit Document</small>
 	</h4>
 </div>
 
@@ -54,15 +54,15 @@ if($information){
 		<div class="row">	
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="fecha_inicio">Fecha Inicio: *</label>
-					<input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio" value="<?php echo $information?$fechaInicio:""; ?>" placeholder="Fecha Inicio" required/>
+					<label class="control-label" for="fecha_inicio">Start Date: *</label>
+					<input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio" value="<?php echo $information?$fechaInicio:""; ?>" placeholder="Start Date" required/>
 				</div>
 			</div>
 			
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="fecha_vencimiento">Fecha Vencimieno: *</label>
-					<input type="text" class="form-control" id="fecha_vencimiento" name="fecha_vencimiento" value="<?php echo $information?$fechaVencimiento:""; ?>" placeholder="Fecha Vencimiento" required/>
+					<label class="control-label" for="fecha_vencimiento">Expiration Date: *</label>
+					<input type="text" class="form-control" id="fecha_vencimiento" name="fecha_vencimiento" value="<?php echo $information?$fechaVencimiento:""; ?>" placeholder="Expiration Date" required/>
 				</div>
 			</div>
 		</div>
@@ -70,15 +70,15 @@ if($information){
 		<div class="row">	
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="numero_poliza">No. Póliza: *</label>
-					<input type="text" class="form-control" id="numero_poliza" name="numero_poliza" value="<?php echo $information?$information[0]["numero_poliza"]:""; ?>" placeholder="No. Póliza" required/>
+					<label class="control-label" for="numero_poliza">Number: *</label>
+					<input type="text" class="form-control" id="numero_poliza" name="numero_poliza" value="<?php echo $information?$information[0]["numero_poliza"]:""; ?>" placeholder="Number" required/>
 				</div>
 			</div>
 			
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="descripcion">Descripción: *</label>
-					<textarea id="descripcion" name="descripcion" placeholder="Descripción" class="form-control" rows="3"><?php echo $information?$information[0]["descripcion"]:""; ?></textarea>
+					<label class="control-label" for="descripcion">Description: *</label>
+					<textarea id="descripcion" name="descripcion" placeholder="Description" class="form-control" rows="3"><?php echo $information?$information[0]["descripcion"]:""; ?></textarea>
 				</div>
 			</div>
 		</div>
