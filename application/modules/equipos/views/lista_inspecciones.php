@@ -41,7 +41,10 @@
 					<i class="fa fa-wrench"></i> Corrective Maintenance
 				</a>
 				<a href="<?php echo base_url('equipos/inspections/' . $info[0]['id_equipo']); ?>" class="btn btn-success btn-block">
-					<i class="fa fa-book"></i> Inspection
+					<i class="fa fa-legal "></i> Inspection
+				</a>
+				<a href="<?php echo base_url('equipos/rental/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
+					<i class="fa fa-puzzle-piece"></i> Rental History
 				</a>
 			</div>
 
@@ -50,7 +53,7 @@
 		<div class="col-lg-9">
 			<div class="panel panel-success">
 				<div class="panel-heading">
-					<i class="fa fa-book"></i> INSPECTION LIST
+					<i class="fa fa-legal"></i> INSPECTION LIST
 				</div>
 				<div class="panel-body">
 				

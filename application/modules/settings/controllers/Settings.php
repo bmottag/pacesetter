@@ -270,9 +270,9 @@ class Settings extends CI_Controller {
 			
 			$idCompany = $this->input->post('hddId');
 			
-			$msj = "Se adicionó el Proveedor!";
+			$msj = "You have added a new customer!";
 			if ($idCompany != '') {
-				$msj = "Se actualizó el Proveedor!";
+				$msj = "Customer updated!";
 			}
 
 			if ($idCompany = $this->settings_model->saveCompany()) {

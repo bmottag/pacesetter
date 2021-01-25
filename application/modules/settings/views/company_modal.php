@@ -1,8 +1,8 @@
 <script type="text/javascript" src="<?php echo base_url("assets/js/validate/settings/company.js"); ?>"></script>
 <div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	<h4 class="modal-title" id="exampleModalLabel">Formulario Proveedores
-	<br><small>Adicionar/Editar Proveedores.</small>
+	<h4 class="modal-title" id="exampleModalLabel">CUSTOMER FORM
+	<br><small>Add/Edit Customer</small>
 	</h4>
 </div>
 
@@ -13,15 +13,15 @@
 		<div class="row">
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="company">Nombre Proveedor: *</label>
-					<input type="text" id="company" name="company" class="form-control" value="<?php echo $information?$information[0]["nombre_proveedor"]:""; ?>" placeholder="Nombre Proveedor" required >
+					<label class="control-label" for="company">Customer Name: *</label>
+					<input type="text" id="company" name="company" class="form-control" value="<?php echo $information?$information[0]["nombre_proveedor"]:""; ?>" placeholder="Customer Name" required >
 				</div>
 			</div>
 			
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="contact">Contacto: *</label>
-					<input type="text" id="contact" name="contact" class="form-control" value="<?php echo $information?$information[0]["contacto"]:""; ?>" placeholder="Contacto" required >
+					<label class="control-label" for="contact">Contact: *</label>
+					<input type="text" id="contact" name="contact" class="form-control" value="<?php echo $information?$information[0]["contacto"]:""; ?>" placeholder="Contact" required >
 				</div>
 			</div>
 		</div>
@@ -29,15 +29,15 @@
 		<div class="row">
 			<div class="col-sm-6">		
 				<div class="form-group text-left">
-					<label class="control-label" for="movilNumber">Número Celular: *</label>
-					<input type="text" id="movilNumber" name="movilNumber" class="form-control" value="<?php echo $information?$information[0]["numero_celular"]:""; ?>" placeholder="Número Celular" required >
+					<label class="control-label" for="movilNumber">Movil Number: *</label>
+					<input type="text" id="movilNumber" name="movilNumber" class="form-control" value="<?php echo $information?$information[0]["numero_celular"]:""; ?>" placeholder="Movil Number" required >
 				</div>
 			</div>
 			
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="email">Correo: *</label>
-					<input type="text" class="form-control" id="email" name="email" value="<?php echo $information?$information[0]["email"]:""; ?>" placeholder="Correo" />
+					<label class="control-label" for="email">Email: *</label>
+					<input type="text" class="form-control" id="email" name="email" value="<?php echo $information?$information[0]["email"]:""; ?>" placeholder="Email" />
 				</div>
 			</div>
 		</div>

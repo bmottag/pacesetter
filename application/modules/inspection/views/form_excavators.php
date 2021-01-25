@@ -12,7 +12,7 @@
 		<div class="col-lg-12">
 			<div class="panel panel-danger">
 				<div class="panel-heading">
-					<i class="fa fa-search"></i><strong> EXCAVATORS INSPECTION</strong>
+					<i class="fa fa-legal "></i><strong> EXCAVATORS INSPECTION</strong>
 				</div>
 				<div class="panel-body">
 

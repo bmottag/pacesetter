@@ -22,7 +22,7 @@ $(function(){
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h4 class="list-group-item-heading">
-					<i class="fa fa-gear fa-fw"></i> CONFIGURACIÓN - PROVEEDORES
+					<i class="fa fa-gear fa-fw"></i> SETTINGS - CUSTOMERS
 					</h4>
 				</div>
 			</div>
@@ -35,11 +35,11 @@ $(function(){
 		<div class="col-lg-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<i class="fa fa-building"></i> LISTA PROVEEDORES
+					<i class="fa fa-building"></i> CUSTOMER LIST
 				</div>
 				<div class="panel-body">
 					<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal" id="x">
-							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar Proveedor
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Customer
 					</button><br>
 <?php
 	$retornoExito = $this->session->flashdata('retornoExito');
@@ -67,10 +67,10 @@ $(function(){
 					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables">
 						<thead>
 							<tr>
-								<th class="text-center">Proveedor</th>
-								<th class="text-center">Contacto</th>
-								<th class="text-center">Celular</th>
-								<th class="text-center">Correo</th>
+								<th class="text-center">Customer</th>
+								<th class="text-center">Contact</th>
+								<th class="text-center">Movil</th>
+								<th class="text-center">Email</th>
 								<th class="text-center">Edit</th>
 							</tr>
 						</thead>

@@ -39,7 +39,7 @@ $(function(){
 		<div class="col-lg-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<i class="fa fa-users"></i> USERS LIST
+					<i class="fa fa-users"></i> USER LIST
 				</div>
 				<div class="panel-body">
 				
