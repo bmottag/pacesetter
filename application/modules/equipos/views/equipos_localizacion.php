@@ -91,32 +91,26 @@ $(function(){
 					<button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#modal" id="<?php echo $info[0]['id_equipo']; ?>">
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Location
 					</button><br>
-
 					
 <?php
-$retornoExito = $this->session->flashdata('retornoExito');
-if ($retornoExito) {
-    ?>
-	<div class="col-lg-12">	
+	$retornoExito = $this->session->flashdata('retornoExito');
+	if ($retornoExito) {
+?>
 		<div class="alert alert-success ">
 			<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 			<?php echo $retornoExito ?>		
 		</div>
-	</div>
-    <?php
-}
-
-$retornoError = $this->session->flashdata('retornoError');
-if ($retornoError) {
-    ?>
-	<div class="col-lg-12">	
+<?php
+	}
+	$retornoError = $this->session->flashdata('retornoError');
+	if ($retornoError) {
+?>
 		<div class="alert alert-danger ">
 			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 			<?php echo $retornoError ?>
 		</div>
-	</div>
-    <?php
-}
+<?php
+	}
 ?> 
 
 <?php 										

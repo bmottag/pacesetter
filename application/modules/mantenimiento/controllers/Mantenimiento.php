@@ -110,6 +110,10 @@ class Mantenimiento extends CI_Controller {
 		$arrParam = array("idEquipo" => $idEquipo);
 		$data['info'] = $this->general_model->get_equipos_info($arrParam);
 		$data['listadoCorrectivos'] = $this->mantenimientos_model->get_correctivo($arrParam);
+		
+		//Lista fotos de equipo
+		$data['foto'] = $this->general_model->get_fotos_equipos($arrParam);
+		
 		$data["view"] = 'correctivo';
 		$this->load->view("layout_calendar", $data);
 	}
@@ -148,7 +152,7 @@ class Mantenimiento extends CI_Controller {
 		$data = array();
 		$idCorrectivo = $this->input->post('hddId');
 		$data["idRecord"] = $this->input->post('hddIdEquipo');
-		$msj = "Se guardo la información!";
+		$msj = "The information was saved!";
 		if ($this->mantenimientos_model->guardarCorrectivo())
 		{				
 			$data["result"] = true;		

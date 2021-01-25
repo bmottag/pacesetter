@@ -34,13 +34,20 @@ $(function(){
 	<br>
 	<div class="row">
 		<div class="col-lg-3">
-			<?php if($info[0]["qr_code_img"]){ ?>
+			<?php if($foto){ ?>
 				<div class="form-group">
 					<div class="row" align="center">
-						<img src="<?php echo base_url($info[0]["qr_code_img"]); ?>" class="img-rounded" width="200" height="200" alt="QR CODE" />
+						<img src="<?php echo base_url($foto[0]["equipo_foto"]); ?>" class="img-rounded" width="150" height="150" alt="Photo" />
 					</div>
 				</div>
 			<?php } ?>
+			
+			<div class="form-group">
+				<div class="row" align="center">
+						<?php echo '<strong>Vin Number:</strong> ' . $info[0]['numero_inventario']; ?>
+				</div>
+			</div>
+			
 			<div class="list-group">
 				<a href="<?php echo base_url('equipos/detalle/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
 					<i class="fa fa-tag"></i> General Information
@@ -61,41 +68,41 @@ $(function(){
 				<a href="<?php echo base_url('mantenimiento/correctivo/' . $info[0]['id_equipo']); ?>" class="btn btn-info btn-block">
 					<i class="fa fa-wrench"></i> Corrective Maintenance
 				</a>
+				<a href="<?php echo base_url('equipos/inspections/' . $info[0]['id_equipo']); ?>" class="btn btn-outline btn-default btn-block">
+					<i class="fa fa-book"></i> Inspection
+				</a>
 			</div>
 		</div>
 		<div class="col-lg-9">
 			<div class="panel panel-info">
 				<div class="panel-heading">
-					<i class="fa fa-tag"></i> MANTENIMIENTOS CORRECTIVOS DEL EQUIPO
+					<i class="fa fa-tag"></i> CORRECTIVE MAINTENANCE
 				</div>
 				<div class="panel-body">
 					<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#modal" id="<?php echo $info[0]['id_equipo']; ?>">
-						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar Mantenimiento Correctivo del Equipo
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Corrective Maintenance
 					</button><br>
-					<?php
-					$retornoExito = $this->session->flashdata('retornoExito');
-					if ($retornoExito) {
-					    ?>
-						<div class="col-lg-12">	
-							<div class="alert alert-success ">
-								<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-								<?php echo $retornoExito ?>		
-							</div>
-						</div>
-					    <?php
-					}
-					$retornoError = $this->session->flashdata('retornoError');
-					if ($retornoError) {
-					    ?>
-						<div class="col-lg-12">	
-							<div class="alert alert-danger ">
-								<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-								<?php echo $retornoError ?>
-							</div>
-						</div>
-					    <?php
-					}
-					?> 
+<?php
+	$retornoExito = $this->session->flashdata('retornoExito');
+	if ($retornoExito) {
+?>
+		<div class="alert alert-success ">
+			<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+			<?php echo $retornoExito ?>		
+		</div>
+<?php
+	}
+	$retornoError = $this->session->flashdata('retornoError');
+	if ($retornoError) {
+?>
+		<div class="alert alert-danger ">
+			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+			<?php echo $retornoError ?>
+		</div>
+<?php
+	}
+?> 
+					
 					<?php 										
 						if(!$listadoCorrectivos){ 
 							echo '<div class="col-lg-12">
@@ -105,14 +112,14 @@ $(function(){
 					?>
 					<table class="table table-bordered table-striped table-hover table-condensed">
 						<tr class="dafault">
-							<th class="text-center">Fecha</th>
-							<th class="text-center">Descripción Falla</th>
-							<th class="text-center">Consideración</th>
-							<th class="text-center">Usuario</th>
-							<th class="text-center">Estado</th>
+							<th class="text-center">Date</th>
+							<th class="text-center">Description Fault</th>
+							<th class="text-center">Requirements</th>
+							<th class="text-center">User</th>
+							<th class="text-center">State</th>
 							<th class="text-center">Edit</th>
-							<th class="text-center">Foto Falla</th>
-							<th class="text-center">Orden Trabajo</th>
+							<th class="text-center">Photo</th>
+							<th class="text-center">Work Order</th>
 						</tr>
 						<?php
 							foreach ($listadoCorrectivos as $data):

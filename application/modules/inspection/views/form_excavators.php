@@ -17,30 +17,25 @@
 				<div class="panel-body">
 
 <?php
-$retornoExito = $this->session->flashdata('retornoExito');
-if ($retornoExito) {
-    ?>
-	<div class="col-lg-12">	
+	$retornoExito = $this->session->flashdata('retornoExito');
+	if ($retornoExito) {
+?>
 		<div class="alert alert-success ">
 			<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 			<?php echo $retornoExito ?>		
 		</div>
-	</div>
-    <?php
-}
-
-$retornoError = $this->session->flashdata('retornoError');
-if ($retornoError) {
-    ?>
-	<div class="col-lg-12">	
+<?php
+	}
+	$retornoError = $this->session->flashdata('retornoError');
+	if ($retornoError) {
+?>
 		<div class="alert alert-danger ">
 			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 			<?php echo $retornoError ?>
 		</div>
-	</div>
-    <?php
-}
-?> 
+<?php
+	}
+?>  
 
 					<?php if($foto){ ?>
 						<div class="form-group">
@@ -64,12 +59,10 @@ if ($retornoError) {
 		//si ya esta la firma entonces se muestra mensaje que ya termino el reporte
 		if($information[0]["signature"]){ 
 ?>
-				<div class="col-lg-12">	
 					<div class="alert alert-success ">
 						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 						Thanks you have finish your Inspection Report.
 					</div>
-				</div>
 <?php   }  ?>
 				<div class="col-lg-6 col-md-offset-3">
                     <div class="panel panel-primary">

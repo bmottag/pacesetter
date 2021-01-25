@@ -2,8 +2,8 @@
 
 <div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	<h4 class="modal-title" id="exampleModalLabel">Mantenimiento Correctivo del Equipo
-	<br><small>Adicionar/Editar Mantenimiento Correctivo</small>
+	<h4 class="modal-title" id="exampleModalLabel">CORRECTIVE MAINTENANCE
+	<br><small>Add/Edit Corrective Maintenance</small>
 	</h4>
 </div>
 
@@ -20,14 +20,14 @@
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="descripcion">Descripción de la Falla o Daño: *</label>
-					<textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción de la Falla o Daño" rows="3" required><?php echo $infoCorrectivo?$descripcion:""; ?></textarea>
+					<label class="control-label" for="descripcion">Description Fault: *</label>
+					<textarea class="form-control" id="descripcion" name="descripcion" placeholder="Description Fault" rows="3" required><?php echo $infoCorrectivo?$descripcion:""; ?></textarea>
 				</div>
 			</div>
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="consideracion">Consideración o Requerimiento: *</label>
-					<textarea class="form-control" id="consideracion" name="consideracion" placeholder="Consideración o Requerimiento" rows="3" required><?php echo $infoCorrectivo?$consideracion:""; ?></textarea>
+					<label class="control-label" for="consideracion">Requirements: *</label>
+					<textarea class="form-control" id="consideracion" name="consideracion" placeholder="Requirements" rows="3" required><?php echo $infoCorrectivo?$consideracion:""; ?></textarea>
 				</div>
 			</div>
 		</div>
