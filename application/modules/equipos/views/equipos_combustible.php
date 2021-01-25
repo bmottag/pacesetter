@@ -37,10 +37,10 @@ $(function(){
 
 		<div class="col-lg-3">
 		
-			<?php if($info[0]["qr_code_img"]){ ?>
+			<?php if($foto){ ?>
 				<div class="form-group">
 					<div class="row" align="center">
-						<img src="<?php echo base_url($info[0]["qr_code_img"]); ?>" class="img-rounded" width="150" height="150" alt="QR CODE" />
+						<img src="<?php echo base_url($foto[0]["equipo_foto"]); ?>" class="img-rounded" width="150" height="150" alt="Photo" />
 					</div>
 				</div>
 			<?php } ?>

@@ -170,6 +170,109 @@
 				}
 		}
 
+		/**
+		 * Add/Edit HeavyInspection
+		 * @since 25/1/2021
+		 */
+		public function saveHeavyInspection() 
+		{
+				$idUser = $this->session->userdata("id");
+				$idHeavyInspection = $this->input->post('hddId');
+		
+				$data = array(
+					'fk_id_equipo_heavy' => $this->input->post('hddIdEquipo'),
+					'equipment_current_hours' => $this->input->post('hours'),
+					'belt' => $this->input->post('belt'),
+					'oil_level' => $this->input->post('oil'),
+					'coolant_level' => $this->input->post('coolantLevel'),
+					'coolant_leaks' => $this->input->post('coolantLeaks'),
+					'working_lamps' => $this->input->post('workingLamps'),
+					'beacon_lights' => $this->input->post('beaconLights'),
+					'heater' => $this->input->post('heater'),
+					'operator_seat' => $this->input->post('operatorSeat'),
+					'gauges' => $this->input->post('gauges'),
+					'horn' => $this->input->post('horn'),
+					'seatbelt' => $this->input->post('seatbelt'),
+					'clean_interior' => $this->input->post('cleanInterior'),
+					'windows' => $this->input->post('windows'),
+					'clean_exterior' => $this->input->post('cleanExterior'),
+					'wipers' => $this->input->post('wipers'),
+					'backup_beeper' => $this->input->post('backupBeeper'),
+					'door' => $this->input->post('door'),
+					'decals' => $this->input->post('decals'),
+					'boom_grease' => $this->input->post('boom'),
+					'table_excavator' => $this->input->post('tableExcavator'),
+					'bucket_pins' => $this->input->post('bucketPins'),
+					'blade_pins' => $this->input->post('bladePins'),
+					'ripper' => $this->input->post('ripper'),
+					'front_axle' => $this->input->post('frontAxle'),
+					'rear_axle' => $this->input->post('rearAxle'),
+					'table_dozer' => $this->input->post('tableDozer'),
+					'pivin_points' => $this->input->post('pivinPoints'),
+					'bucket_pins_skit' => $this->input->post('bucketPinsSkit'),
+					'side_arms' => $this->input->post('sideArms'),
+					'bucket' => $this->input->post('bucket'),
+					'cutting_edges' => $this->input->post('cutting'),
+					'blades' => $this->input->post('blades'),
+					'tracks' => $this->input->post('tracks'),
+					'rubber_trucks' => $this->input->post('rubberTrucks'),
+					'rollers' => $this->input->post('rollers'),
+					'thamper' => $this->input->post('thamper'),
+					'drill' => $this->input->post('drill'),					
+					'fire_extinguisher' => $this->input->post('fire'),
+					'first_aid' => $this->input->post('aid'),
+					'spill_kit' => $this->input->post('spillKit'),
+					'tire_presurre' => $this->input->post('tire'),
+					'turn_signals' => $this->input->post('turn'),
+					'rims' => $this->input->post('rims'),
+					'emergency_brake' => $this->input->post('brake'),
+					'transmission' => $this->input->post('transmission'),
+					'hydrolic' => $this->input->post('hydrolic'),
+					'comments' => $this->input->post('comments')
+				);
+								
+				//revisar si es para adicionar o editar
+				if ($idHeavyInspection == '') 
+				{
+					$data['date_issue'] = date("Y-m-d G:i:s");
+					$data['fk_id_user_heavy'] = $idUser;
+					
+					$query = $this->db->insert('inspection_heavy', $data);
+					$idHeavyInspection = $this->db->insert_id();
+				} else {
+					$this->db->where('id_inspection_heavy', $idHeavyInspection);
+					$query = $this->db->update('inspection_heavy', $data);
+				}
+				if ($query) {
+					return $idHeavyInspection;
+				} else {
+					return false;
+				}
+		}
+
+		/**
+		 * Update current hours
+		 * @since 25/1/2021
+		 */
+		public function updateCurrentHours() 
+		{
+				$idEquipo = $this->input->post('hddIdEquipo');
+
+				$data = array(
+					'current_hours' => $this->input->post('hours')
+				);
+
+				$this->db->where('id_equipo', $idEquipo);
+				$query = $this->db->update('equipos', $data);
+
+				if ($query) {
+					return true;
+				}else{
+					return false;
+				}
+
+		}
+
 
 
 		

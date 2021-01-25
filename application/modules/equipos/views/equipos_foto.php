@@ -8,10 +8,10 @@
 
 		<div class="col-lg-3 col-md-3">
 		
-			<?php if($info[0]["qr_code_img"]){ ?>
+			<?php if($foto){ ?>
 				<div class="form-group">
 					<div class="row" align="center">
-						<img src="<?php echo base_url($info[0]["qr_code_img"]); ?>" class="img-rounded" width="150" height="150" alt="QR CODE" />
+						<img src="<?php echo base_url($foto[0]["equipo_foto"]); ?>" class="img-rounded" width="150" height="150" alt="Photo" />
 					</div>
 				</div>
 			<?php } ?>
@@ -141,7 +141,7 @@
 						echo "<td >" . $data['descripcion'] . "</td>";
 						echo "<td class='text-center'><small>";
 				?>					
-			<button type="button" id="<?php echo $data['id_equipo_foto']; ?>" class='btn btn-danger' title="Eliminar">
+			<button type="button" id="<?php echo $data['id_equipo_foto']; ?>" class='btn btn-danger' title="Delete">
 					<i class="fa fa-trash-o"></i>
 			</button>
 				<?php

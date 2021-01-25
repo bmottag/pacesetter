@@ -25,19 +25,19 @@
   </script>
 </head>
 <body onselectstart="return false">
-	<form  name="form" id="form" method="post" >
-		<div id="signature-pad" class="m-signature-pad">
-			<div class="m-signature-pad--body">
-				<canvas></canvas>
-			</div>
-			<div class="m-signature-pad--footer">
-				<div class="description">Firmar arriba</div>
-				<button type="button" class="button clear" data-action="clear">Limpiar</button>
-				<button type="button" class="button save" data-action="save">Guardar</button>
-			</div>
-		</div>
-		<input type="hidden" name="image" id="image">
-	</form>
+  <form  name="form" id="form" method="post" >
+    <div id="signature-pad" class="m-signature-pad">
+      <div class="m-signature-pad--body">
+        <canvas></canvas>
+      </div>
+      <div class="m-signature-pad--footer">
+        <div class="description">Sign above</div>
+        <button type="button" class="button clear" data-action="clear">Clear</button>
+        <button type="button" class="button save" data-action="save">Save</button>
+      </div>
+    </div>
+    <input type="hidden" name="image" id="image">
+  </form>
   <script src="<?php echo base_url("assets/signature_pad/js/signature_pad.js"); ?>"></script>
   <script src="<?php echo base_url("assets/signature_pad/js/app.js"); ?>"></script>
 </body>

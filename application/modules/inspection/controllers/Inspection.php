@@ -143,12 +143,12 @@ class Inspection extends CI_Controller {
 				
 				$this->load->model("general_model");
 				$data['linkBack'] = "inspection/add_" . $typo . "_inspection/" . $idInspection;
-				$data['titulo'] = "<i class='fa fa-life-saver fa-fw'></i>FIRMA";
+				$data['titulo'] = "<i class='fa fa-life-saver fa-fw'></i>SIGNATURE";
 				if ($this->general_model->updateRecord($arrParam)) {
 					//$this->session->set_flashdata('retornoExito', 'You just save your signature!!!');
 					
 					$data['clase'] = "alert-success";
-					$data['msj'] = "Se guardó la firma con éxito.";	
+					$data['msj'] = "Good job, you have save your signature.";	
 				} else {
 					//$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> Ask for help');
 					
@@ -187,6 +187,84 @@ class Inspection extends CI_Controller {
 		
 		redirect($data['vehicleInfo'][0]['enlace_inspeccion'],"location",301);		
 	}
+
+	/**
+	 * Form Add Heavy Inspection
+     * @since 17/12/2016
+     * @author BMOTTAG
+	 */
+	public function add_heavy_inspection($id = 'x')
+	{
+			$this->load->model("general_model");
+			
+			$data['information'] = FALSE;
+					
+			//si envio el id, entonces busco la informacion 
+			if ($id != 'x') {
+					$arrParam = array(
+						"table" => "inspection_heavy",
+						"order" => "id_inspection_heavy",
+						"column" => "id_inspection_heavy",
+						"id" => $id
+					);
+					$data['information'] = $this->general_model->get_basic_search($arrParam);//info inspection_heavy
+					
+					$idEquipo = $data['information'][0]['fk_id_equipo_heavy'];
+			}else{
+					$idEquipo = $this->session->userdata("idEquipo");
+					if (!$idEquipo || empty($idEquipo) || $idEquipo == "x" ) { 
+						show_error('ERROR!!! - You are in the wrong place.');	
+					}
+			}
+			
+			//busco datos del vehiculo
+			$arrParam['idEquipo'] = $idEquipo;
+			$data['vehicleInfo'] = $this->general_model->get_equipos_info($arrParam);
+
+			//Lista fotos de equipo
+			$data['foto'] = $this->general_model->get_fotos_equipos($arrParam);
+
+			$data["view"] = $data['vehicleInfo'][0]['formulario_inspeccion'];
+			$this->load->view("layout", $data);
+	}
+
+	/**
+	 * Save heavy_inspection
+     * @since 27/12/2016
+     * @author BMOTTAG
+	 */
+	public function save_heavy_inspection()
+	{			
+			header('Content-Type: application/json');
+			$data = array();
+			
+			$idHeavyInspection = $this->input->post('hddId');
+			$idEquipo = $this->input->post('hddIdEquipo');
+			
+			$msj = "You have save your inspection record, please do not forget to sign!!";
+			$flag = true;
+			if ($idHeavyInspection != '') {
+				$flag = false;
+				$msj = "You have update the Inspection record!!";
+			}
+
+			if($idHeavyInspection = $this->inspection_model->saveHeavyInspection()) 
+			{
+				//actualizo el campo de kilometros actuales de la tabla equipos
+				$this->inspection_model->updateCurrentHours();
+
+				$data["result"] = true;
+				$data["idHeavyInspection"] = $idHeavyInspection;
+				$this->session->set_flashdata('retornoExito', $msj);
+			} else {
+				$data["result"] = "error";
+				$data["mensaje"] = "Error!!! Ask for help.";
+				$data["idHeavyInspection"] = "";
+				$this->session->set_flashdata('retornoError', '<strong>Error!!!</strong> Ask for help');
+			}
+
+			echo json_encode($data);
+    }
 	
 	
 	

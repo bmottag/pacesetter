@@ -99,10 +99,10 @@ class Equipos extends CI_Controller {
 
 			$pass = $this->generaPass();//clave para colocarle al codigo QR
 		
-			$msj = "Se adicionó equipo!";
+			$msj = "You have added a new equipment!";
 			$flag = true;
 			if ($idEquipo != '') {
-				$msj = "Se actualizó equipo!";
+				$msj = "You have updated the equipment!";
 				$flag = false;
 			}
 			
@@ -205,6 +205,9 @@ class Equipos extends CI_Controller {
 			$arrParam = array("idEquipo" => $idEquipo);
 			$data['info'] = $this->general_model->get_equipos_info($arrParam);
 
+			//Lista fotos de equipo
+			$data['foto'] = $this->general_model->get_fotos_equipos($arrParam);
+
 			//DESHABILITAR
 			$data['deshabilitar'] = '';
 			$userRol = $this->session->role;
@@ -220,8 +223,8 @@ class Equipos extends CI_Controller {
 				"order" => "tipo_equipo",
 				"id" => "x"
 			);
-			$data['tipoEquipo'] = $this->general_model->get_basic_search($arrParam);
-			
+			$data['tipoEquipo'] = $this->general_model->get_basic_search($arrParam);			
+
 			$data["view"] = 'equipos_detalle';
 			$this->load->view("layout_calendar", $data);
 	}
@@ -296,6 +299,9 @@ class Equipos extends CI_Controller {
 			//busco datos del equipo
 			$arrParam = array("idEquipo" => $idEquipo);
 			$data['info'] = $this->general_model->get_equipos_info($arrParam);
+
+			//Lista fotos de equipo
+			$data['foto'] = $this->general_model->get_fotos_equipos($arrParam);
 			
 			//Lista fotos de equipo
 			$data['fotosEquipos'] = $this->general_model->get_fotos_equipos($arrParam);
@@ -392,6 +398,9 @@ class Equipos extends CI_Controller {
 	{
 			$arrParam = array("idEquipo" => $idEquipo);
 			$data['info'] = $this->general_model->get_equipos_info($arrParam);
+
+			//Lista fotos de equipo
+			$data['foto'] = $this->general_model->get_fotos_equipos($arrParam);
 			
 			$data['listadoLocalizacion'] = $this->equipos_model->get_localizacion($arrParam);
 			
@@ -460,6 +469,9 @@ class Equipos extends CI_Controller {
 	{
 			$arrParam = array("idEquipo" => $idEquipo);
 			$data['info'] = $this->general_model->get_equipos_info($arrParam);
+
+			//Lista fotos de equipo
+			$data['foto'] = $this->general_model->get_fotos_equipos($arrParam);
 			
 			$data['listadoControlCombustible'] = $this->equipos_model->get_control_combustible($arrParam);
 						
@@ -503,6 +515,9 @@ class Equipos extends CI_Controller {
 	{
 			$arrParam = array("idEquipo" => $idEquipo);
 			$data['info'] = $this->general_model->get_equipos_info($arrParam);
+
+			//Lista fotos de equipo
+			$data['foto'] = $this->general_model->get_fotos_equipos($arrParam);
 			
 			$data['listadoPolizas'] = $this->equipos_model->get_poliza($arrParam);
 						
