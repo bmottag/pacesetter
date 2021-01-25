@@ -606,6 +606,27 @@ class Equipos extends CI_Controller {
 			$this->load->view("combustible_modal", $data);
     }
 
+	/**
+	 * Lista de inspecciones
+     * @since 25/1/2021
+     * @author BMOTTAG
+	 */
+	public function inspections($idEquipo)
+	{
+			$arrParam = array("idEquipo" => $idEquipo);
+			$data['info'] = $this->general_model->get_equipos_info($arrParam);
+
+			//Lista fotos de equipo
+			$data['foto'] = $this->general_model->get_fotos_equipos($arrParam);
+			
+			$arrParam['tablaInspeccion'] = $data['info'][0]['tabla_inspeccion'];
+			$arrParam['vista'] = $data['info'][0]['vista'];
+			$data['listadoInspecciones'] = $this->general_model->get_inspecciones($arrParam);
+
+			$data["view"] = 'lista_inspecciones';
+			$this->load->view("layout_calendar", $data);
+	}
+
 
 	
 }

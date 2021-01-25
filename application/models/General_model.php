@@ -406,5 +406,36 @@ class General_model extends CI_Model {
 				}
 		}
 
+		/**
+		 * Lista de inspecciones
+		 * @since 25/1/2021
+		 */
+		public function get_inspecciones($arrData) 
+		{		
+				$this->db->select("A.*, CONCAT(first_name, ' ', last_name) name");
+
+				if (array_key_exists("vista", $arrData)) 
+				{
+					$this->db->join('usuarios U', 'U.id_user = A.fk_id_user_' . $arrData['vista'], 'INNER');
+
+					if (array_key_exists("idEquipo", $arrData)){
+						$this->db->where('A.fk_id_equipo_' . $arrData['vista'], $arrData["idEquipo"]);
+					}
+					if (array_key_exists("idInspeccion", $arrData)){
+						$this->db->where('A.id_inspection_' . $arrData['vista'], $arrData["idInspeccion"]);
+					}
+				
+					$this->db->order_by('A.id_inspection_' . $arrData['vista'], 'desc');
+				}
+				
+				$query = $this->db->get($arrData["tablaInspeccion"] . ' A');
+
+				if ($query->num_rows() > 0) {
+					return $query->result_array();
+				} else {
+					return false;
+				}
+		}
+
 
 }
