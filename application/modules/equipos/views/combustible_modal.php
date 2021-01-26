@@ -38,11 +38,11 @@
 					<label class="control-label" for="tipo_consumo">Fluid Type: *</label>
 					<select name="tipo_consumo" id="tipo_consumo" class="form-control" required>
 						<option value=''>Select ...</option>
-						<option value=1 <?php if($information && $information[0]["tipo_consumo"] == 1) { echo "selected"; }  ?>>Combustible</option>
-						<option value=2 <?php if($information && $information[0]["tipo_consumo"] == 2) { echo "selected"; }  ?>>Grasa</option>
-						<option value=3 <?php if($information && $information[0]["tipo_consumo"] == 3) { echo "selected"; }  ?>>Aceite Transmisión</option>
-						<option value=4 <?php if($information && $information[0]["tipo_consumo"] == 4) { echo "selected"; }  ?>>Aceite Hidráulico</option>
-						<option value=5 <?php if($information && $information[0]["tipo_consumo"] == 5) { echo "selected"; }  ?>>Aceite Motor</option>
+						<option value=1 <?php if($information && $information[0]["tipo_consumo"] == 1) { echo "selected"; }  ?>>Fuel</option>
+						<option value=2 <?php if($information && $information[0]["tipo_consumo"] == 2) { echo "selected"; }  ?>>Grease</option>
+						<option value=3 <?php if($information && $information[0]["tipo_consumo"] == 3) { echo "selected"; }  ?>>Transmission Oil</option>
+						<option value=4 <?php if($information && $information[0]["tipo_consumo"] == 4) { echo "selected"; }  ?>>Hydraulic Oil</option>
+						<option value=5 <?php if($information && $information[0]["tipo_consumo"] == 5) { echo "selected"; }  ?>>Engine Oil</option>
 					</select>
 				</div>
 			</div>

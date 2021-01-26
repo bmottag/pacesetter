@@ -71,9 +71,14 @@
                         </form>
 						
                         <br>
-						<a href="<?php echo base_url("login/recover"); ?>">¿Olvidó su contraseña?</a><br>
-                        <a href="<?php echo base_url("login/search_equipment"); ?>">Ver Equipo</a>
-						
+                        
+                        <a href="<?php echo base_url('login/recover'); ?>" class="btn btn-default btn-xs">
+                            <i class="fa fa-unlock"></i> Forgot Password? 
+                        </a>
+                        <a href="<?php echo base_url('login/search_equipment'); ?>" class="btn btn-default btn-xs">
+                            <i class="fa fa-thumb-tack"></i> Search Equipment 
+                        </a>
+                        
                     </div>
                 </div>
             </div>

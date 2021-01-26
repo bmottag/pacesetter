@@ -6,8 +6,8 @@
 		<div class="col-lg-12">
 			<div class="panel panel-info">
 				<div class="panel-heading">	
-					<a class="btn btn-info btn-xs" href="<?php echo base_url('login/search_equipment'); ?> "><span class="glyphicon glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Regresar </a> 				
-					<i class="fa fa-truck"></i> Listado Equipos
+					<a class="btn btn-info btn-xs" href="<?php echo base_url('login/search_equipment'); ?> "><span class="glyphicon glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Go Back </a> 				
+					<i class="fa fa-truck"></i> EQUIPMENT LIST
 				</div>
 				<div class="panel-body">	
 
@@ -22,13 +22,13 @@
 					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables">
 						<thead>
 							<tr>
-								<th class="text-center">No. Inventario Entidad</th>
-								<th class="text-center">Marca</th>
-								<th class="text-center">Modelo</th>
-								<th class="text-center">Número Serial</th>
-								<th class="text-center">Estado</th>
-								<th class="text-center">Observación</th>
-								<th class="text-center">Ver Equipo</th>
+								<th class="text-center">Vin Number</th>
+								<th class="text-center">Make</th>
+								<th class="text-center">Model</th>
+								<th class="text-center">Serial Number</th>
+								<th class="text-center">State</th>
+								<th class="text-center">Observation</th>
+								<th class="text-center">View</th>
 							</tr>
 						</thead>
 						<tbody>							
@@ -65,7 +65,7 @@
 								?>
 
 									<a class='btn btn-success btn-xs' href='<?php echo $enlace; ?>' <?php echo $deshabilitar; ?>>
-										Ver Equipo <span class="fa fa-arrow-circle-right" aria-hidden="true" >
+										Go <span class="fa fa-arrow-circle-right" aria-hidden="true" >
 									</a>
 
 								<?php

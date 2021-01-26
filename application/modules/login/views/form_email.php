@@ -98,7 +98,10 @@
 						</form>
 											
 						<br>	
-						<a href="<?php echo base_url("login"); ?>">Ingresar</a><br>
+
+						<a href="<?php echo base_url('login'); ?>" class="btn btn-default btn-xs">
+							<i class="fa fa-chevron-left"></i> Go Back
+						</a>
 						
                     </div>
                 </div>

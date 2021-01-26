@@ -47,7 +47,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Buscar equipo por número de inventario</h3>
+                        <h3 class="panel-title">Search Equipment by Vin Number</h3>
                     </div>
                     <div class="panel-body">
 						<?php if(isset($msjSuccess)){?>
@@ -75,8 +75,8 @@
 						<form  name="form" id="form" role="form" method="post" action="<?php echo base_url("external/buscar_equipo"); ?>">
 
 							<div class="form-group has-feedback">
-								<label class="control-label" for="numero_inventario">Número Inventario Entidad: </label>
-								<input type="text" id="numero_inventario" name="numero_inventario" class="form-control" placeholder="Número de inventario" maxlength=50 required="required">
+								<label class="control-label" for="numero_inventario">Vin Number: </label>
+								<input type="text" id="numero_inventario" name="numero_inventario" class="form-control" placeholder="Vin Number" maxlength=50 required="required">
 							</div>
 							<div class="row">
 								<div class="col-xs-8">
@@ -84,14 +84,16 @@
 								</div>
 								<!-- /.col -->
 								<div class="col-xs-4">
-									<button type="submit" class="btn btn-info btn-block" id='btnSubmit' name='btnSubmit'>Buscar</button>
+									<button type="submit" class="btn btn-info btn-block" id='btnSubmit' name='btnSubmit'>Search</button>
 								</div>
 								<!-- /.col -->
 							</div>
 						</form>
 											
 						<br>	
-						<a href="<?php echo base_url("login"); ?>">Regresar</a><br>
+						<a href="<?php echo base_url('login'); ?>" class="btn btn-default btn-xs">
+							<i class="fa fa-chevron-left"></i> Go Back
+						</a>
 						
                     </div>
                 </div>
