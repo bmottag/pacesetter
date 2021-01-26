@@ -348,6 +348,42 @@
 					return false;
 				}
 		}
+
+		/**
+		 * Guardar Rental
+		 * @since 25/1/2021
+		 */
+		public function guardarRental()
+		{
+				$idRental = $this->input->post('hddId');
+				$idEquipo = $this->input->post('hddIdEquipo');
+				$idUser = $this->session->userdata("id");
+				
+				$data = array(
+					'fk_id_equipo_rental' => $idEquipo,
+					'fecha_inicio' => formatear_fecha($this->input->post('fecha_inicio')),
+					'fecha_fin' => formatear_fecha($this->input->post('fecha_fin')),
+					'fk_id_proveedor_rental ' => $this->input->post('id_customer'),
+					'fk_id_user_responsable ' => $this->input->post('id_usuario'),
+					'comentarios' => $this->input->post('comments')
+				);	
+
+				//revisar si es para adicionar o editar
+				if ($idRental == '') 
+				{
+					$data['fk_id_user_rental'] = $idUser;
+					$data['fecha_registro'] = date("Y-m-d G:i:s");
+					$query = $this->db->insert('equipos_rental', $data);
+				} else {
+					$this->db->where('id_equipo_rental', $idRental);
+					$query = $this->db->update('equipos_rental', $data);
+				}
+				if ($query) {
+					return true;
+				} else {
+					return false;
+				}
+		}
 		
 		
 		

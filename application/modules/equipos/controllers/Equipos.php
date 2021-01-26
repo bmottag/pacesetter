@@ -275,7 +275,7 @@ class Equipos extends CI_Controller {
 			$data["idRecord"] = $this->input->post('hddIdEquipo');
 			$MetodoGuardar = $this->input->post('hddMetodoGuardar');
 		
-			$msj = "Se guardo la información!";
+			$msj = "The information was saved!";
 
 			if ($idInfoEspecificaEquipo = $this->equipos_model->$MetodoGuardar()) 
 			{				
@@ -446,7 +446,7 @@ class Equipos extends CI_Controller {
 			$idLocalizacion = $this->input->post('hddId');
 			$data["idRecord"] = $this->input->post('hddIdEquipo');
 		
-			$msj = "Se guardo la información!";
+			$msj = "The information was saved!";
 
 			if ($idLocalizacion = $this->equipos_model->guardarLocalizacion()) 
 			{				
@@ -492,7 +492,7 @@ class Equipos extends CI_Controller {
 			$idControlCombustible = $this->input->post('hddidControlCombustibler');
 			$data["idRecord"] = $this->input->post('hddidEquipo');
 		
-			$msj = "Se guardo la información!";
+			$msj = "The information was saved!";
 
 			if ($idControlCombustible = $this->equipos_model->guardarControlCombustible()) 
 			{				
@@ -563,7 +563,7 @@ class Equipos extends CI_Controller {
 			$idPoliza = $this->input->post('hddId');
 			$data["idRecord"] = $this->input->post('hddIdEquipo');
 		
-			$msj = "Se guardo la información!";
+			$msj = "The information was saved!";
 
 			if ($idPoliza = $this->equipos_model->guardarPoliza()) 
 			{				
@@ -626,6 +626,93 @@ class Equipos extends CI_Controller {
 			$data["view"] = 'lista_inspecciones';
 			$this->load->view("layout_calendar", $data);
 	}
+
+	/**
+	 * Historial de alquiler del equipo
+     * @since 25/1/2021
+     * @author BMOTTAG
+	 */
+	public function rental($idEquipo)
+	{
+			$arrParam = array("idEquipo" => $idEquipo);
+			$data['info'] = $this->general_model->get_equipos_info($arrParam);
+
+			//Lista fotos de equipo
+			$data['foto'] = $this->general_model->get_fotos_equipos($arrParam);
+			
+			$data['listadoRental'] = $this->general_model->get_rental($arrParam);
+
+			$data["view"] = 'equipos_rental';
+			$this->load->view("layout_calendar", $data);
+	}
+
+    /**
+     * Cargo modal - Rental
+     * @since 25/1/2021
+     */
+    public function cargarModalRental() 
+	{
+			header("Content-Type: text/plain; charset=utf-8"); //Para evitar problemas de acentos
+			
+			$data['information'] = FALSE;
+			$data["idEquipo"] = $this->input->post("idEquipo");
+			$data["idRental"] = $this->input->post("idRental");
+
+			//Lista de operadores activos
+			$arrParam = array(
+						"filtroState" => TRUE,
+						'idRole' => 5
+						);
+			$data['listaOperadores'] = $this->general_model->get_user($arrParam);
+
+			//Listado de clientes
+			$arrParam = array(
+				"table" => "param_proveedores",
+				"order" => "id_proveedor",
+				"id" => "x"
+			);
+			$data['customerList'] = $this->general_model->get_basic_search($arrParam);
+			
+			if ($data["idRental"] != 'x') 
+			{
+				$arrParam = array(
+					"idRental" => $data["idRental"]
+				);
+				$data['information'] = $this->general_model->get_rental($arrParam);
+				
+				$data["idEquipo"] = $data['information'][0]['fk_id_equipo_rental'];
+			}
+			
+			$this->load->view("rental_modal", $data);
+    }
+	
+	/**
+	 * Guardar Rental
+	 * @since 25/1/2021
+     * @author BMOTTAG
+	 */
+	public function guardar_rental()
+	{			
+			header('Content-Type: application/json');
+			$data = array();
+
+			$idRental = $this->input->post('hddId');
+			$data["idRecord"] = $this->input->post('hddIdEquipo');
+		
+			$msj = "The information was saved!";
+
+			if ($idRental = $this->equipos_model->guardarRental()) 
+			{				
+				$data["result"] = true;		
+				$this->session->set_flashdata('retornoExito', '<strong>Right!</strong> ' . $msj);
+			} else {
+				$data["result"] = "error";
+				$this->session->set_flashdata('retornoError', '<strong>Error!</strong> Ask for help');
+			}
+		
+			echo json_encode($data);
+    }
+
 
 
 	

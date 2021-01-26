@@ -437,5 +437,33 @@ class General_model extends CI_Model {
 				}
 		}
 
+		/**
+		 * Lista de alquiler
+		 * @since 25/1/2021
+		 */
+		public function get_rental($arrData) 
+		{		
+				$this->db->select("A.*, P.*, CONCAT(first_name, ' ', last_name) responsable");
+				$this->db->join('usuarios U', 'U.id_user = A.fk_id_user_responsable', 'INNER');
+				$this->db->join('param_proveedores P', 'P.id_proveedor = A.fk_id_proveedor_rental', 'INNER');
+
+				if (array_key_exists("idEquipo", $arrData)) {
+					$this->db->where('A.fk_id_equipo_rental', $arrData["idEquipo"]);
+				}
+				if (array_key_exists("idRental", $arrData)) {
+					$this->db->where('A.id_equipo_rental', $arrData["idRental"]);
+				}
+				
+				$this->db->order_by('A.id_equipo_rental', 'desc');
+				$query = $this->db->get('equipos_rental A');
+
+
+				if ($query->num_rows() > 0) {
+					return $query->result_array();
+				} else {
+					return false;
+				}
+		}
+
 
 }
