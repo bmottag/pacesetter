@@ -17,11 +17,11 @@
 			// customize the button names,
 			// otherwise they'd all just say "list"
 			views: {
-				listDay: { buttonText: 'Lita por Día' },
-				listWeek: { buttonText: 'Lita por Semana' }
+				listDay: { buttonText: 'List day' },
+				listWeek: { buttonText: 'List week' }
 			},
 
-			buttonText: { today:    'Hoy' },
+			buttonText: { today:    'Today' },
 			firstDay: 1, //para iniciar en lunes
 			 
 			initialView: 'listWeek',

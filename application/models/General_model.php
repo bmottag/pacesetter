@@ -453,6 +453,12 @@ class General_model extends CI_Model {
 				if (array_key_exists("idRental", $arrData)) {
 					$this->db->where('A.id_equipo_rental', $arrData["idRental"]);
 				}
+				if (array_key_exists("from", $arrData) && $arrData["from"] != '') {
+					$this->db->where('A.fecha_fin >=', $arrData["from"]);
+				}				
+				if (array_key_exists("to", $arrData) && $arrData["to"] != '' && $arrData["from"] != '') {
+					$this->db->where('A.fecha_fin <', $arrData["to"]);
+				}
 				
 				$this->db->order_by('A.id_equipo_rental', 'desc');
 				$query = $this->db->get('equipos_rental A');

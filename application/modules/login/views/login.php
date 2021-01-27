@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	
-    <title>JBB</title>
+    <title>PACESETTER-APP</title>
 	<link rel="icon" type="image/png" href="<?php echo base_url("images/favicon.png"); ?>" />
 
     <!-- Bootstrap Core CSS -->

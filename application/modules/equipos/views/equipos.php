@@ -140,8 +140,8 @@ $(function(){
 									echo "<td class='text-center'>";
 						?>
 
-                        <a href="<?php echo base_url('equipos/detalle' . $lista['id_equipo']); ?>" class="btn btn-default btn-xs">
-                            <?php echo $lista['numero_inventario'] ?> 
+                        <a href="<?php echo base_url('equipos/detalle/' . $lista['id_equipo']); ?>">
+                            <strong><?php echo $lista['numero_inventario'] ?> </strong>
                         </a>
 						
 						<?php

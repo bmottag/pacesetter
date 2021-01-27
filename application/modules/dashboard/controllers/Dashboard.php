@@ -77,19 +77,19 @@ class Dashboard extends CI_Controller {
 			);
 			
 			//informacion Work Order
-			$polizas = $this->general_model->get_polizas($arrParam);
-
+			$rental = $this->general_model->get_rental($arrParam);
+pr($rental);
 			echo  '[';
 
-			if($polizas)
+			if($rental)
 			{
-				$longitud = count($polizas);
+				$longitud = count($rental);
 				$i=1;
-				foreach ($polizas as $data):
+				foreach ($rental as $data):
 					echo  '{
-						      "title": "Póliza a vencerse #: ' . $data['numero_poliza'] . ' - Equipo No. Inventario: ' . $data['numero_inventario'] . '",
-						      "start": "' . $data['fecha_vencimiento'] . '",
-						      "end": "' . $data['fecha_vencimiento'] . '",
+						      "title": "Rental Equipment #: ' . $data['id_equipo_rental'] . ' - Customer: ' . $data['nombre_proveedor'] . '",
+						      "start": "' . $data['fecha_inicio'] . '",
+						      "end": "' . $data['fecha_fin'] . '",
 						      "color": "green",
 						      "url": "' . base_url("equipos/detalle/" . $data['id_equipo']) . '"
 						    }';
